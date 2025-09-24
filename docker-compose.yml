@@ -1,0 +1,18 @@
+services:
+  app:
+    image: ruby:3.4.6
+    command: bundle exec jekyll serve --watch --force_polling --host 0.0.0.0 --livereload
+    entrypoint: ["/app/docker-entrypoint.sh"]
+    ports:
+      - "4000:4000"
+      - "35729:35729"  # LiveReload port
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    environment:
+      - JEKYLL_ENV=development
+      - BUNDLE_PATH=/usr/local/bundle
+    working_dir: /app
+
+volumes:
+  bundle:

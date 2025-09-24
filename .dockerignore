@@ -1,0 +1,28 @@
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile*
+docker-compose*
+
+# Build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dependencies
+node_modules/
+vendor/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
