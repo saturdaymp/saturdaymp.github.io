@@ -1,0 +1,20 @@
+title: "Saturday Morning Productions"
+description: "The Saturday Morning Productions website."
+
+# GitHub Pages specific settings
+url: "https://saturdaymp.github.io"
+
+# Jekyll configuration
+markdown: kramdown
+highlighter: rouge
+
+# Plugin settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude files from being processed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
