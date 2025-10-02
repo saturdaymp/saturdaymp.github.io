@@ -18,3 +18,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/
+  - docker-compose.yml
+  - docker-entrypoint.sh
+  - LICENSE
+  - README.md
+  - CLAUDE.md
