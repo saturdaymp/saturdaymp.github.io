@@ -1,0 +1,30 @@
+---
+layout: default
+title: Home
+---
+
+<section class="home-jumbotron home-jumbotron-image mx-auto">
+  <img src="{{ '/assets/images/home/jumbotron.jpg' | relative_url }}" class="img-fluid mx-auto" alt="Saturday Morning Productions">
+</section>
+<section class="jumbotron home-tagline rounded-0">
+  <div class="container">
+    <h1>Ship secure high quality software faster</h1>
+    <h5>Learn how to switch your software development process from being reactive to proactive</h5>
+  </div>
+  {% include consult_button.html %}
+</section>
+<section class="home-boxes">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        {% include box.html title="Best Practices" text="Coaching, guidance, and training on software development best practices." %}
+      </div>
+      <div class="col-sm">
+        {% include box.html title="DevOps" text="Automate manual process so developers can focus on coding." %}
+      </div>
+      <div class="col-sm">
+        {% include box.html title="Reviews" text="Get a 2nd opinion on your architecture and code." %}
+      </div>
+    </div>
+  </div>
+</section>
