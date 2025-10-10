@@ -1,0 +1,71 @@
+---
+---
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Theme customizations
+// Need to be done before importing Bootstrap
+$font-family-base: 'Montserrat', Arial, sans-serif;
+
+$primary: #007399;
+$secondary: #737373;
+$light: #F7F7F7;
+
+// Import Bootstrap styles
+@import "bootstrap";
+
+
+// Global styles, done after Bootstrap to override defaults
+body {
+  font-family: $font-family-base;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  color: #FFFFFF;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 17px;
+}
+
+// Button defaults
+.btn {
+  @extend .border;
+  @extend .border-dark;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+// Modal dialogs
+.modal-header {
+  background-color: #AEBFC9;
+}
+
+.modal-footer {
+  background-color: #AEBFC9;
+}
+
+.modal-content {
+  background-color: $light;
+}
+
+// Import component styles
+@import "body_header";
+@import "body_footer";
+@import "home";
+@import "about";
+@import "contact";
+@import "media";
