@@ -12,7 +12,8 @@ $primary: #007399;
 $secondary: #737373;
 $light: #F7F7F7;
 
-// Import Bootstrap styles
+// Import Bootstrap styles.  Assumes that the Bootstrap gem
+// is installed and uses the bootstrap_gem_path plugin.
 @import "bootstrap";
 
 

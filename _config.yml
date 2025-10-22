@@ -8,11 +8,6 @@ url: "https://saturdaymp.github.io"
 markdown: kramdown
 highlighter: rouge
 
-# So we can find the Bootstrap stylesheets
-sass:
-  load_paths:
-    - /usr/local/bundle/ruby/3.4.0/gems/bootstrap-5.3.5/assets/stylesheets
-
 # Exclude files from being processed
 exclude:
   - Gemfile
