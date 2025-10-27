@@ -8,6 +8,19 @@ url: "https://saturdaymp.github.io"
 markdown: kramdown
 highlighter: rouge
 
+# Silence the deprecation warnings for SASS features that
+# are being deprecated but Bootstrap 5.3 still uses them.
+# Likely won't be fixed until Bootstrap 6 is released.  Once
+# that happens the below deprecations can be un-silenced.
+#
+# https://sass-lang.com/documentation/breaking-changes/import/
+# https://github.com/twbs/bootstrap/pull/41236
+sass:
+  silence_deprecations:
+    - import
+    - color-functions
+    - global-builtin
+
 # Exclude files from being processed
 exclude:
   - Gemfile
