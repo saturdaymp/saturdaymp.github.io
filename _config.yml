@@ -31,3 +31,4 @@ exclude:
   - LICENSE
   - README.md
   - CLAUDE.md
+  - AGENTS.md
