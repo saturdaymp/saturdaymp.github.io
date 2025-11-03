@@ -63,7 +63,9 @@ The site is configured in [_config.yml](_config.yml):
   - `import` (Bootstrap 5.3 compatibility)
   - `color-functions` (Bootstrap 5.3 compatibility)
   - `global-builtin` (Bootstrap 5.3 compatibility)
-- Excludes: Gemfile, Gemfile.lock, vendor/, docker files, LICENSE, README.md, CLAUDE.md
+- Excludes: Gemfile, Gemfile.lock, vendor/, docker files, LICENSE, README.md, CLAUDE.md, AGENTS.md
+
+**Note**: When adding new configuration files, documentation files, or development-related files to the repository, remember to update the `exclude` list in [_config.yml](_config.yml) to prevent them from being processed and published to the live site.
 
 ## Local Development
 

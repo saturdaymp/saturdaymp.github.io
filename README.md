@@ -36,7 +36,11 @@ This website automatically deploys to GitHub Pages using GitHub Actions. The dep
 1. **Build Job**: Sets up Ruby 3.4, installs dependencies via Bundler, and builds the Jekyll site
 2. **Deploy Job**: Deploys the built site to GitHub Pages
 
-The site is built using the production Jekyll environment and is available at [https://saturdaymp.github.io](https://saturdaymp.github.io).  Watch videos on how this site was built:
+The site is built using the production Jekyll environment and is available at [https://saturdaymp.github.io](https://saturdaymp.github.io).
+
+**Note**: When adding new configuration files, documentation files, or development-related files to the repository, remember to update the `exclude` list in `_config.yml` to prevent them from being processed and published to the live site.
+
+Watch videos on how this site was built:
 
 - [SaturdayMP Show 68: Migrate From Rails to Jekyll (Part 1)](https://youtu.be/K2ddgnMDTFk)
 - [SaturdayMP Show 69: Migrate From Rails to Jekyll (Part 2)](https://youtu.be/ShVTQ1wLTsI)
