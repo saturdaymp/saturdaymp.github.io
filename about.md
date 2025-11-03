@@ -25,7 +25,7 @@ description: Learn about Saturday Morning Productions - our story, mission, and 
         to eat all his vegetables, and IF it would make him happy to express himself in creative
         ways and IF he could do it on his own time and IF whatever programmers he hired would stay
         out of sight in the mocha shack.  More time passed, and their carefree lifestyle was
-        replaced with responsibility and reality.  This left saturday mornings for daydreaming
+        replaced with responsibility and reality.  This left Saturday mornings for daydreaming
         and playing the occasional video game.  More time passed and their lifestyle was further replaced
         with a mortgage (which included a basement and behemoth garden) and adorable daughter.
         The trade-off was well worth it, but Chris's dreams lingered on.
