@@ -30,7 +30,7 @@ description: Get in touch with Saturday Morning Productions. We're located in Ed
             <div class="col">
                 <h3 class="contact-feedback-header">Have Feedback?</h3>
                 <p class="contact-feedback-paragraph">
-                    We are curious to know what you think of Saturday Morning Productions, especially if you have an unanswered question, criticisim, or praise. We especially like praise. Until we perfect our-mind reading skills, we need you to tell us in one of the old fashioned ways listed.
+                    We are curious to know what you think of Saturday Morning Productions, especially if you have an unanswered question, criticism, or praise. We especially like praise. Until we perfect our mind reading skills, we need you to tell us in one of the old fashioned ways listed.
                 </p>
             </div>
             <div class="col">
