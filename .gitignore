@@ -9,3 +9,9 @@ vendor/
 
 # Ignore Gemlock for GitHub pages
 Gemfile.lock
+
+# Ignore Claude settings.
+.claude/
+
+# Ignore TODO files
+.todos/
