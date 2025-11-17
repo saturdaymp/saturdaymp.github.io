@@ -29,8 +29,7 @@ This is a Jekyll-based GitHub Pages website for Saturday Morning Productions.
 │   ├── _about.scss       # About page styles
 │   ├── _contact.scss     # Contact page styles
 │   ├── _body_header.scss # Header styles
-│   ├── _body_footer.scss # Footer styles
-│   └── _media.scss       # Media queries
+│   └── _body_footer.scss # Footer styles
 ├── assets/
 │   ├── css/              # Compiled CSS
 │   │   ├── main.scss     # Main stylesheet with Bootstrap imports
@@ -180,7 +179,6 @@ The site uses a custom Bootstrap 5.3.0 integration:
   - `_contact.scss` - Contact page styles
   - `_body_header.scss` - Header component styles
   - `_body_footer.scss` - Footer component styles
-  - `_media.scss` - Media queries and responsive design
 
 ### Bootstrap Integration
 
