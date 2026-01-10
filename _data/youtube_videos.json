@@ -1,0 +1,10 @@
+[
+  {
+    "id": "PLACEHOLDER",
+    "title": "Videos will appear here after running the GitHub Action",
+    "description": "Add your YOUTUBE_API_KEY secret and run the 'Fetch YouTube Videos' workflow to populate this file.",
+    "publishedAt": "2024-01-01T00:00:00Z",
+    "thumbnail": "https://via.placeholder.com/480x360?text=Run+GitHub+Action",
+    "thumbnailMedium": "https://via.placeholder.com/320x180?text=Run+GitHub+Action"
+  }
+]

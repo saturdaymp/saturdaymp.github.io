@@ -1,0 +1,63 @@
+# Fetches latest YouTube videos and saves to _data/youtube_videos.json
+# This allows the videos page to load instantly without client-side API calls
+name: Fetch YouTube Videos
+
+on:
+  # Run weekly on Sunday at midnight UTC
+  schedule:
+    - cron: '0 0 * * 0'
+
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-videos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Fetch YouTube Videos
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          CHANNEL_ID: UCa--Aos-i1nb6CJalzhV-rg
+        run: |
+          # Fetch latest 10 videos from the channel's uploads
+          response=$(curl -s "https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=10&type=video")
+
+          # Check if API call was successful
+          if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
+            echo "API Error:"
+            echo "$response" | jq '.error'
+            exit 1
+          fi
+
+          # Transform the response to a cleaner format
+          echo "$response" | jq '[.items[] | {
+            id: .id.videoId,
+            title: .snippet.title,
+            description: .snippet.description,
+            publishedAt: .snippet.publishedAt,
+            thumbnail: .snippet.thumbnails.high.url,
+            thumbnailMedium: .snippet.thumbnails.medium.url
+          }]' > _data/youtube_videos.json
+
+          echo "Fetched videos:"
+          cat _data/youtube_videos.json | jq '.[].title'
+
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check if there are changes
+          if git diff --quiet _data/youtube_videos.json; then
+            echo "No changes to YouTube videos"
+          else
+            git add _data/youtube_videos.json
+            git commit -m "Update YouTube videos data"
+            git push
+          fi
