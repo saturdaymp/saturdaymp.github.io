@@ -26,28 +26,24 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: ./scripts/fetch-youtube-videos.sh
 
+      - name: Commit changes
+        id: auto-commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update YouTube videos data"
+          branch: automated/update-youtube-videos
+          create_branch: true
+          file_pattern: "_data/youtube_videos.json"
+          push_options: "--force"
+
       - name: Create PR with Auto-merge
+        if: steps.auto-commit.outputs.changes_detected == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Check if there are changes
-          if git diff --quiet _data/youtube_videos.json; then
-            echo "No changes to YouTube videos"
-            exit 0
-          fi
-
-          # Configure git
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Create a branch, commit, and push
           BRANCH="automated/update-youtube-videos"
-          git checkout -B "$BRANCH"
-          git add _data/youtube_videos.json
-          git commit -m "Update YouTube videos data"
-          git push -f origin "$BRANCH"
 
-          # Create PR if one doesn't exist, then enable auto-merge
+          # Create PR if one doesn't exist
           if ! gh pr list --head "$BRANCH" --state open | grep -q .; then
             gh pr create \
               --title "Update YouTube videos data" \
