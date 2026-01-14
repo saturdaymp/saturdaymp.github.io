@@ -1,0 +1,69 @@
+# Validates YouTube videos data file on pull requests
+# This workflow acts as a required status check for auto-merge
+name: Validate YouTube Data
+
+on:
+  pull_request:
+    paths:
+      - '_data/youtube_videos.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Validate JSON structure
+        run: |
+          # Check that JSON is well-formed
+          if ! jq empty _data/youtube_videos.json 2>/dev/null; then
+            echo "::error::Invalid JSON in youtube_videos.json"
+            exit 1
+          fi
+          echo "✓ JSON is well-formed"
+
+      - name: Validate video count
+        run: |
+          count=$(jq 'length' _data/youtube_videos.json)
+          if [ "$count" -eq 0 ]; then
+            echo "::error::No videos in youtube_videos.json"
+            exit 1
+          fi
+          echo "✓ Found $count videos"
+
+      - name: Validate video content
+        run: |
+          # Check that each video has required fields
+          missing=$(jq '[.[] | select(.id == null or .title == null or .thumbnails == null)] | length' _data/youtube_videos.json)
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing videos are missing required fields (id, title, or thumbnails)"
+            exit 1
+          fi
+          echo "✓ All videos have required fields"
+
+          # Check that video IDs are valid YouTube format (11 characters)
+          invalid_ids=$(jq '[.[] | select(.id | test("^[a-zA-Z0-9_-]{11}$") | not)] | length' _data/youtube_videos.json)
+          if [ "$invalid_ids" -gt 0 ]; then
+            echo "::error::$invalid_ids videos have invalid YouTube video IDs"
+            exit 1
+          fi
+          echo "✓ All video IDs are valid format"
+
+          # Check that titles are not empty strings
+          empty_titles=$(jq '[.[] | select(.title == "")] | length' _data/youtube_videos.json)
+          if [ "$empty_titles" -gt 0 ]; then
+            echo "::error::$empty_titles videos have empty titles"
+            exit 1
+          fi
+          echo "✓ All videos have non-empty titles"
+
+      - name: Summary
+        run: |
+          echo "## Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          count=$(jq 'length' _data/youtube_videos.json)
+          echo "✅ **$count videos** validated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Videos:" >> $GITHUB_STEP_SUMMARY
+          jq -r '.[] | "- \(.title)"' _data/youtube_videos.json >> $GITHUB_STEP_SUMMARY

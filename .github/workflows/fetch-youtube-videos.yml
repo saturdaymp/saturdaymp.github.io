@@ -1,0 +1,70 @@
+# Fetches latest YouTube videos and saves to _data/youtube_videos.json
+# This allows the videos page to load instantly without client-side API calls
+name: Fetch YouTube Videos
+
+on:
+  # Run weekly on Sunday at midnight UTC
+  schedule:
+    - cron: '0 0 * * 0'
+
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-videos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set branch name with date
+        run: echo "BRANCH=automated/update-youtube-videos-$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Fetch YouTube Videos
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: ./scripts/fetch-youtube-videos.sh
+
+      - name: Basic sanity check
+        run: |
+          # Quick check that we got valid JSON before committing
+          # Full validation happens in the PR check workflow (validate-youtube-data.yml)
+          if ! jq empty _data/youtube_videos.json 2>/dev/null; then
+            echo "Error: Invalid JSON in youtube_videos.json"
+            exit 1
+          fi
+          echo "Basic check passed: $(jq 'length' _data/youtube_videos.json) videos fetched"
+
+      - name: Commit changes
+        id: auto-commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update YouTube videos data"
+          branch: ${{ env.BRANCH }}
+          create_branch: true
+          file_pattern: "_data/youtube_videos.json"
+          push_options: "--force"
+
+      - name: Create PR with Auto-merge
+        if: steps.auto-commit.outputs.changes_detected == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ env.BRANCH }}
+        run: |
+          # Create PR if one doesn't exist
+          if ! gh pr list --head "$BRANCH" --state open | grep -q .; then
+            gh pr create \
+              --title "Update YouTube videos data" \
+              --body "Automated update of YouTube video data from the channel." \
+              --base main \
+              --head "$BRANCH"
+          fi
+
+          # Enable auto-merge (merge commit, not squash)
+          # Note: Auto-merge will wait for required status checks (validate-youtube-data.yml)
+          # Configure this in Settings > Branches > Branch protection rules
+          gh pr merge "$BRANCH" --auto --merge
