@@ -6,3 +6,32 @@
   z-index: 9998 !important;
   width: 340px;
 }
+
+// Navigation styling
+.navbar-nav .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #3f3f3f;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: #007399;
+  }
+
+  &.active {
+    color: #007399;
+    font-weight: 700;
+  }
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #007399;
+
+  &:hover {
+    color: #005570;
+  }
+}
