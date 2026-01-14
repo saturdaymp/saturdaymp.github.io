@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Set branch name with date
+        run: echo "BRANCH=automated/update-youtube-videos-$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
       - name: Fetch YouTube Videos
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -31,7 +34,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update YouTube videos data"
-          branch: automated/update-youtube-videos
+          branch: ${{ env.BRANCH }}
           create_branch: true
           file_pattern: "_data/youtube_videos.json"
           push_options: "--force"
@@ -41,8 +44,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BRANCH="automated/update-youtube-videos"
-
           # Create PR if one doesn't exist
           if ! gh pr list --head "$BRANCH" --state open | grep -q .; then
             gh pr create \
