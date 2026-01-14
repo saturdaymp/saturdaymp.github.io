@@ -26,6 +26,12 @@ fi
 # Ensure _data directory exists
 mkdir -p "$(dirname "$OUTPUT_FILE")"
 
+# Remove old data file to ensure clean slate
+if [ -f "$OUTPUT_FILE" ]; then
+    rm "$OUTPUT_FILE"
+    echo "Removed old video data"
+fi
+
 # Fetch videos from YouTube API
 echo "Fetching latest $MAX_RESULTS videos from channel $CHANNEL_ID..."
 
