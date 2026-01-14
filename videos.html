@@ -1,0 +1,82 @@
+---
+layout: default
+title: Videos
+permalink: /videos/
+description: Watch the latest episodes of The SaturdayMP Show - programming tutorials, security challenges, and coding adventures.
+---
+
+<section class="videos-header">
+    <div class="container">
+        <h1>The SaturdayMP Show</h1>
+        <p class="videos-subtitle">Programming tutorials, security challenges, and coding adventures</p>
+    </div>
+</section>
+
+{% if site.data.youtube_videos.size > 0 %}
+    {% assign latest_video = site.data.youtube_videos | first %}
+
+    {% unless latest_video.id == "PLACEHOLDER" %}
+    <section class="videos-featured">
+        <div class="container">
+            <h2>Latest Episode</h2>
+            <div class="videos-featured-wrapper">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.youtube.com/embed/{{ latest_video.id }}"
+                        title="{{ latest_video.title }}"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h3 class="videos-featured-title">{{ latest_video.title }}</h3>
+                <p class="videos-featured-description">{{ latest_video.description }}</p>
+            </div>
+        </div>
+    </section>
+
+    {% if site.data.youtube_videos.size > 1 %}
+    <section class="videos-grid-section">
+        <div class="container">
+            <h2>Previous Episodes</h2>
+            <div class="row">
+                {% for video in site.data.youtube_videos offset:1 limit:9 %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="videos-card">
+                        <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <div class="videos-card-overlay">
+                                <span class="videos-play-icon">&#9658;</span>
+                            </div>
+                        </a>
+                        <h4 class="videos-card-title">{{ video.title }}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% else %}
+    <section class="videos-setup">
+        <div class="container">
+            <div class="videos-setup-message">
+                <h2>Setup Required</h2>
+                <p>To display videos, add your <code>YOUTUBE_API_KEY</code> as a GitHub Secret and run the "Fetch YouTube Videos" workflow.</p>
+                <a href="https://www.youtube.com/@saturdaymp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Visit YouTube Channel
+                </a>
+            </div>
+        </div>
+    </section>
+    {% endunless %}
+{% endif %}
+
+<section class="videos-subscribe">
+    <div class="container">
+        <h5>Subscribe for weekly episodes</h5>
+        <a href="https://www.youtube.com/@saturdaymp?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Subscribe on YouTube
+        </a>
+    </div>
+</section>

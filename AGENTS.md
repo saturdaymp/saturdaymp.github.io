@@ -15,36 +15,44 @@ This is a Jekyll-based GitHub Pages website for Saturday Morning Productions.
 ```
 .
 ├── _config.yml           # Jekyll configuration
+├── _data/                # Data files
+│   └── youtube_videos.json  # YouTube video data (auto-updated by GitHub Actions)
 ├── _layouts/             # Layout templates
 │   └── default.html      # Default layout with Bootstrap 5 integration
 ├── _includes/            # Reusable components
-│   ├── body_header.html  # Site header
+│   ├── body_header.html  # Site header with navigation menu
 │   ├── body_footer.html  # Site footer
 │   ├── box.html          # Box component for homepage
-│   └── consult_button.html  # Consultation button component
+│   └── consult_button.html  # "Let's Chat" button component
 ├── _plugins/             # Custom Jekyll plugins
-│   └── bootstrap_gem_path.rb  # Adds Bootstrap gem to Sass load paths
+│   ├── bootstrap_gem_path.rb  # Adds Bootstrap gem to Sass load paths
+│   └── bootstrap_js_copier.rb # Copies Bootstrap JS from gem to assets
 ├── _sass/                # Sass partials
 │   ├── _home.scss        # Homepage styles
 │   ├── _about.scss       # About page styles
 │   ├── _contact.scss     # Contact page styles
+│   ├── _videos.scss      # Videos page styles
 │   ├── _body_header.scss # Header styles
 │   └── _body_footer.scss # Footer styles
 ├── assets/
 │   ├── css/              # Compiled CSS
-│   │   ├── main.scss     # Main stylesheet with Bootstrap imports
-│   │   ├── _about.scss   # About page styles
-│   │   └── _contact.scss # Contact page styles
+│   │   └── main.scss     # Main stylesheet with Bootstrap imports
+│   ├── js/               # JavaScript files
+│   │   └── vendor/       # Third-party JS (Bootstrap copied here at build)
 │   └── images/           # Image assets
 │       ├── home/         # Homepage images
 │       ├── about/        # About page images
 │       ├── contact/      # Contact page images
 │       └── footer/       # Footer images
+├── scripts/              # Utility scripts
+│   └── fetch-youtube-videos.sh  # Script to fetch YouTube videos
 ├── _site/                # Generated site (excluded from git)
 ├── .github/
 │   └── workflows/
-│       └── jekyll.yml    # GitHub Actions deployment workflow
-├── index.html            # Homepage (HTML with Liquid templates)
+│       ├── jekyll.yml    # GitHub Actions deployment workflow
+│       └── fetch-youtube-videos.yml  # YouTube video fetch workflow
+├── index.html            # Homepage
+├── videos.html           # SaturdayMP Show videos page
 ├── about.md              # About page
 ├── contact.md            # Contact page
 ├── favicon.ico           # Site favicon
@@ -62,7 +70,7 @@ The site is configured in [_config.yml](_config.yml):
   - `import` (Bootstrap 5.3 compatibility)
   - `color-functions` (Bootstrap 5.3 compatibility)
   - `global-builtin` (Bootstrap 5.3 compatibility)
-- Excludes: Gemfile, Gemfile.lock, vendor/, docker files, LICENSE, README.md, CLAUDE.md, AGENTS.md
+- Excludes: Gemfile, Gemfile.lock, vendor/, docker files, LICENSE, README.md, CLAUDE.md, AGENTS.md, scripts/
 
 **Note**: When adding new configuration files, documentation files, or development-related files to the repository, remember to update the `exclude` list in [_config.yml](_config.yml) to prevent them from being processed and published to the live site.
 
@@ -105,6 +113,40 @@ The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 
 Manual deployment can be triggered via the Actions tab in GitHub using the `workflow_dispatch` event.
 
+## YouTube Videos Integration
+
+The site displays videos from The SaturdayMP Show YouTube channel. Videos are fetched automatically via GitHub Actions.
+
+### How It Works
+
+1. **GitHub Actions Workflow** ([.github/workflows/fetch-youtube-videos.yml](.github/workflows/fetch-youtube-videos.yml)):
+   - Runs weekly on Sunday at midnight UTC
+   - Can be triggered manually from the Actions tab
+   - Fetches latest 10 videos from the YouTube API
+   - Creates a PR with auto-merge enabled
+
+2. **Fetch Script** ([scripts/fetch-youtube-videos.sh](scripts/fetch-youtube-videos.sh)):
+   - Standalone bash script that fetches videos from YouTube API
+   - Can be run manually for testing:
+     ```bash
+     YOUTUBE_API_KEY=your_key ./scripts/fetch-youtube-videos.sh
+     ```
+
+3. **Data Storage** (`_data/youtube_videos.json`):
+   - Stores video metadata (id, title, description, thumbnail URLs)
+   - Automatically updated by the GitHub Actions workflow
+
+### Setup Requirements
+
+1. **YouTube Data API Key**:
+   - Create a Google Cloud project
+   - Enable YouTube Data API v3
+   - Create an API key
+   - Add as GitHub Secret: `YOUTUBE_API_KEY`
+
+2. **Repository Settings**:
+   - Enable "Allow auto-merge" in Settings > General > Pull Requests
+
 ## Content Management
 
 ### Pages
@@ -114,14 +156,21 @@ The site includes the following pages:
 1. **Homepage** ([index.html](index.html))
    - Uses Liquid templating and Bootstrap 5 components
    - Features: hero image, tagline section, three-column feature boxes
+   - SaturdayMP Show section with latest video and show description
    - Includes: consult_button.html and box.html components
 
-2. **About Page** ([about.md](about.md))
+2. **Videos Page** ([videos.html](videos.html))
+   - Permalink: `/videos/`
+   - Displays The SaturdayMP Show episodes
+   - Features latest video embed and grid of previous episodes
+   - Data loaded from `_data/youtube_videos.json`
+
+3. **About Page** ([about.md](about.md))
    - Permalink: `/about/`
    - Content: Company history and Weekly Dev Chat sponsorship
    - Includes: consult_button.html component
 
-3. **Contact Page** ([contact.md](contact.md))
+4. **Contact Page** ([contact.md](contact.md))
    - Permalink: `/contact/`
    - Content: Contact information, business hours, and email addresses
    - Features: Phone and email CTAs
@@ -152,15 +201,15 @@ The default layout ([_layouts/default.html](_layouts/default.html)) includes:
 - Header (via `body_header.html` include)
 - Main content area with flexbox min-height layout
 - Footer (via `body_footer.html` include)
-- Bootstrap 5.1.3 JavaScript bundle from CDN
+- Bootstrap JavaScript (copied from gem via plugin)
 
 ### Includes
 
 Reusable components in [_includes/](_includes/):
-- `body_header.html` - Site navigation header
-- `body_footer.html` - Site footer with copyright and links
+- `body_header.html` - Site navigation header with responsive menu (Home, SaturdayMP Show, About, Contact) and "Let's Chat" button
+- `body_footer.html` - Site footer with logo, sitemap links, social media icons, and contact info
 - `box.html` - Feature box component (used on homepage)
-- `consult_button.html` - Call-to-action consultation button
+- `consult_button.html` - "Let's Chat" call-to-action button (opens Calendly widget)
 
 ## Styling
 
@@ -171,21 +220,28 @@ The site uses a custom Bootstrap 5.3.0 integration:
 - **Main stylesheet**: [assets/css/main.scss](assets/css/main.scss)
   - Imports Bootstrap from the gem
   - Imports custom Sass partials from `_sass/`
-  - Custom partials are also duplicated in `assets/css/` for specific pages
 
 - **Custom partials** (in [_sass/](_sass/) directory):
-  - `_home.scss` - Homepage-specific styles
+  - `_home.scss` - Homepage-specific styles (including SaturdayMP Show section)
   - `_about.scss` - About page styles
   - `_contact.scss` - Contact page styles
-  - `_body_header.scss` - Header component styles
+  - `_videos.scss` - Videos page styles
+  - `_body_header.scss` - Header and navigation styles
   - `_body_footer.scss` - Footer component styles
 
 ### Bootstrap Integration
 
-The site uses a custom Jekyll plugin ([_plugins/bootstrap_gem_path.rb](_plugins/bootstrap_gem_path.rb)) to:
-- Dynamically locate the Bootstrap gem installation
-- Add Bootstrap's stylesheet path to Jekyll's Sass load paths
-- Enable importing Bootstrap directly in Sass files
+The site uses custom Jekyll plugins for Bootstrap integration:
+
+1. **[_plugins/bootstrap_gem_path.rb](_plugins/bootstrap_gem_path.rb)**:
+   - Dynamically locates the Bootstrap gem installation
+   - Adds Bootstrap's stylesheet path to Jekyll's Sass load paths
+   - Enables importing Bootstrap directly in Sass files
+
+2. **[_plugins/bootstrap_js_copier.rb](_plugins/bootstrap_js_copier.rb)**:
+   - Copies Bootstrap JavaScript from the gem to `assets/js/vendor/`
+   - Runs at build time, ensuring JS matches the gem version
+   - Eliminates need for CDN-hosted JavaScript
 
 ## Dependencies
 

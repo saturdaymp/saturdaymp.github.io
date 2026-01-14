@@ -1,0 +1,82 @@
+[
+  {
+    "id": "UwfyyYPsOwo",
+    "title": "SaturdayMP Show 80: Creating PostCast (Part 2 – Testing Fyne Packaging)",
+    "description": "In this episode I'm joined by Omar, and we try cross-compiling and packaging our Fyne example app for Linux, Windows, and ...",
+    "publishedAt": "2026-01-14T07:00:25Z",
+    "thumbnail": "https://i.ytimg.com/vi/UwfyyYPsOwo/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/UwfyyYPsOwo/mqdefault.jpg"
+  },
+  {
+    "id": "lMT_l2QjNFc",
+    "title": "SaturdayMP Show 79: Creating PostCast (Part 1 – Setting up Go Environment)",
+    "description": "Happy New Year everyone! In this video I start on the PostCast* app, and this video turned out to be an hour of getting Go and ...",
+    "publishedAt": "2026-01-07T07:00:42Z",
+    "thumbnail": "https://i.ytimg.com/vi/lMT_l2QjNFc/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/lMT_l2QjNFc/mqdefault.jpg"
+  },
+  {
+    "id": "1qmdQy2FgA4",
+    "title": "SaturdayMP Show 78: Advent of Code 2025 (Day 1 - Part 2: Success)",
+    "description": "It took me two videos and over 2 hours, but I finally solved the Day 1 - Part 2 Advent of Code 2025 challenge! I wonder if I'm that is ...",
+    "publishedAt": "2025-12-18T13:27:47Z",
+    "thumbnail": "https://i.ytimg.com/vi/1qmdQy2FgA4/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/1qmdQy2FgA4/mqdefault.jpg"
+  },
+  {
+    "id": "FCAHNP9kJ3U",
+    "title": "SaturdayMP Show 77: Advent of Code 2025 (Day 1 - Part 2: Failure)",
+    "description": "In this episode I explain how I previously solved Day 1 - Part 1 of the Advent of Code 2025 problem. I then proceed to fail to solve ...",
+    "publishedAt": "2025-12-10T22:28:07Z",
+    "thumbnail": "https://i.ytimg.com/vi/FCAHNP9kJ3U/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/FCAHNP9kJ3U/mqdefault.jpg"
+  },
+  {
+    "id": "7EN_NzzzRnM",
+    "title": "SaturdayMP Show 76: Hack the Box - Lock (Part 2 - Both Flags)",
+    "description": "Part 2 of the Lock machine. I was able to capture both the user and system flags with the help of the walkthrough. My biggest ...",
+    "publishedAt": "2025-12-03T07:00:06Z",
+    "thumbnail": "https://i.ytimg.com/vi/7EN_NzzzRnM/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/7EN_NzzzRnM/mqdefault.jpg"
+  },
+  {
+    "id": "M6CMolFPnGs",
+    "title": "SaturdayMP Show 75: Hack the Box - Lock (Part 1 - Almost Captured the User Flag)",
+    "description": "In this episode I attempt the Lock machine on @HackTheBox. Spoiler: I almost captured the user flag but ran out of time.",
+    "publishedAt": "2025-11-26T17:12:49Z",
+    "thumbnail": "https://i.ytimg.com/vi/M6CMolFPnGs/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/M6CMolFPnGs/mqdefault.jpg"
+  },
+  {
+    "id": "wX9jUd_KVBE",
+    "title": "SaturdayMP Show 74: Migrate From Rails to Jekyll (Part 7 of 7)",
+    "description": "The final episode in porting the SaturdayMP website from Rails to Jekyll where I update the DNS entries to point to the GitHub ...",
+    "publishedAt": "2025-11-19T14:40:41Z",
+    "thumbnail": "https://i.ytimg.com/vi/wX9jUd_KVBE/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/wX9jUd_KVBE/mqdefault.jpg"
+  },
+  {
+    "id": "bR1E1FdoTSM",
+    "title": "SaturdayMP Show 73: Migrate From Rails to Jekyll (Part 6 of 7)",
+    "description": "No major hiccups in this episode, just several small tasks such as migrating the about and contact us pages, the favicon, and ...",
+    "publishedAt": "2025-11-05T07:00:35Z",
+    "thumbnail": "https://i.ytimg.com/vi/bR1E1FdoTSM/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/bR1E1FdoTSM/mqdefault.jpg"
+  },
+  {
+    "id": "eRCGlsGHNNM",
+    "title": "SaturdayMP Show 72: Migrate From Rails to Jekyll (Part 5 of 7)",
+    "description": "In this episode I fix the SASS depreciation warnings for @import and other statements. By fix I mean just ignore them as Bootstrap ...",
+    "publishedAt": "2025-10-29T06:00:30Z",
+    "thumbnail": "https://i.ytimg.com/vi/eRCGlsGHNNM/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/eRCGlsGHNNM/mqdefault.jpg"
+  },
+  {
+    "id": "eJbMn75dQKo",
+    "title": "SaturdayMP Show 71: Migrate From Rails to Jekyll (Part 4 of 7)",
+    "description": "In this episode I fixe the broken build from the last episode. I also created a Bootstrap plugin to find the Bootstrap SCSS path to ...",
+    "publishedAt": "2025-10-23T20:49:12Z",
+    "thumbnail": "https://i.ytimg.com/vi/eJbMn75dQKo/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/eJbMn75dQKo/mqdefault.jpg"
+  }
+]
