@@ -29,6 +29,23 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: ./scripts/fetch-youtube-videos.sh
 
+      - name: Validate JSON
+        run: |
+          # Check that JSON is well-formed
+          if ! jq empty _data/youtube_videos.json 2>/dev/null; then
+            echo "Error: Invalid JSON in youtube_videos.json"
+            exit 1
+          fi
+
+          # Check that we have at least one video
+          count=$(jq 'length' _data/youtube_videos.json)
+          if [ "$count" -eq 0 ]; then
+            echo "Error: No videos in youtube_videos.json"
+            exit 1
+          fi
+
+          echo "Validation passed: $count videos found"
+
       - name: Commit changes
         id: auto-commit
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -43,6 +60,7 @@ jobs:
         if: steps.auto-commit.outputs.changes_detected == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ env.BRANCH }}
         run: |
           # Create PR if one doesn't exist
           if ! gh pr list --head "$BRANCH" --state open | grep -q .; then
