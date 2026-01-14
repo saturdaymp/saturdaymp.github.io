@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   fetch-videos:
@@ -25,16 +26,35 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: ./scripts/fetch-youtube-videos.sh
 
-      - name: Commit and Push
+      - name: Create PR with Auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
           # Check if there are changes
           if git diff --quiet _data/youtube_videos.json; then
             echo "No changes to YouTube videos"
-          else
-            git add _data/youtube_videos.json
-            git commit -m "Update YouTube videos data"
-            git push
+            exit 0
           fi
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create a branch, commit, and push
+          BRANCH="automated/update-youtube-videos"
+          git checkout -B "$BRANCH"
+          git add _data/youtube_videos.json
+          git commit -m "Update YouTube videos data"
+          git push -f origin "$BRANCH"
+
+          # Create PR if one doesn't exist, then enable auto-merge
+          if ! gh pr list --head "$BRANCH" --state open | grep -q .; then
+            gh pr create \
+              --title "Update YouTube videos data" \
+              --body "Automated update of YouTube video data from the channel." \
+              --base main \
+              --head "$BRANCH"
+          fi
+
+          # Enable auto-merge (merge commit, not squash)
+          gh pr merge "$BRANCH" --auto --merge
