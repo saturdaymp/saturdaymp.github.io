@@ -29,22 +29,15 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: ./scripts/fetch-youtube-videos.sh
 
-      - name: Validate JSON
+      - name: Basic sanity check
         run: |
-          # Check that JSON is well-formed
+          # Quick check that we got valid JSON before committing
+          # Full validation happens in the PR check workflow (validate-youtube-data.yml)
           if ! jq empty _data/youtube_videos.json 2>/dev/null; then
             echo "Error: Invalid JSON in youtube_videos.json"
             exit 1
           fi
-
-          # Check that we have at least one video
-          count=$(jq 'length' _data/youtube_videos.json)
-          if [ "$count" -eq 0 ]; then
-            echo "Error: No videos in youtube_videos.json"
-            exit 1
-          fi
-
-          echo "Validation passed: $count videos found"
+          echo "Basic check passed: $(jq 'length' _data/youtube_videos.json) videos fetched"
 
       - name: Commit changes
         id: auto-commit
@@ -72,4 +65,6 @@ jobs:
           fi
 
           # Enable auto-merge (merge commit, not squash)
+          # Note: Auto-merge will wait for required status checks (validate-youtube-data.yml)
+          # Configure this in Settings > Branches > Branch protection rules
           gh pr merge "$BRANCH" --auto --merge
