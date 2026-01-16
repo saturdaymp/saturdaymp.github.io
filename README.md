@@ -4,7 +4,7 @@
 
 The official website for Saturday Morning Productions, built with Jekyll and hosted on GitHub Pages.  Let me know if you spot any issues, have an improvement, or a questions by opening a [Issue](https://github.com/saturdaymp/saturdaymp.github.io/issues) or [Pull Request](https://github.com/saturdaymp/saturdaymp.github.io/pulls).  This site is public so we can all learn from it!
 
-See how this site was migrated from a Rails app Jekyll:
+See how this site was migrated from a Rails app to Jekyll:
 
 https://www.youtube.com/playlist?list=PLYPcrKbLqwutOPHv6zimONxErY7ke9tWn
 
