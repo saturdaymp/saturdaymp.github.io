@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set branch name with date
         run: echo "BRANCH=automated/update-youtube-videos-$(date +'%Y-%m-%d')" >> $GITHUB_ENV
