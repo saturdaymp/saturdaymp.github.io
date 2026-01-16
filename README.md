@@ -2,7 +2,12 @@
 
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=fe8e86)](https://github.com/sponsors/saturdaymp)
 
-The official website for Saturday Morning Productions, built with Jekyll and hosted on GitHub Pages.
+The official website for Saturday Morning Productions, built with Jekyll and hosted on GitHub Pages.  Let me know if you spot any issues, have an improvment, or a questions by opening a [Issue](https://github.com/saturdaymp/saturdaymp.github.io/issues) or [Pull Request](https://github.com/saturdaymp/saturdaymp.github.io/pulls).  This site is public so we can all learn from it!
+
+See how this site was migrated from a Rails app Jekyll:
+
+https://www.youtube.com/playlist?list=PLYPcrKbLqwutOPHv6zimONxErY7ke9tWn
+
 
 ## About Saturday Morning Productions
 
@@ -10,8 +15,7 @@ Saturday Morning Productions is a software development and consulting company ba
 
 **Contact Us:**
 - Email: [info@saturdaymp.com](mailto:info@saturdaymp.com)
-- Phone: 1-780-886-3406
-- Website: [https://saturdaymp.github.io](https://saturdaymp.github.io)
+- Website: [https://saturdaymp.com](https://saturdaymp.com)
 
 ## Running Locally
 
@@ -72,11 +76,3 @@ You can test the fetch script locally:
 ```bash
 YOUTUBE_API_KEY=your_key ./scripts/fetch-youtube-videos.sh
 ```
-
-## Watch How This Site Was Built
-
-- [SaturdayMP Show 68: Migrate From Rails to Jekyll (Part 1)](https://youtu.be/K2ddgnMDTFk)
-- [SaturdayMP Show 69: Migrate From Rails to Jekyll (Part 2)](https://youtu.be/ShVTQ1wLTsI)
-- [SaturdayMP Show 70: Migrate From Rails to Jekyll (Part 3)](https://youtu.be/0s_3jVIttnc)
-- [SaturdayMP Show 71: Migrate From Rails to Jekyll (Part 4)](https://youtu.be/eJbMn75dQKo)
-- [SaturdayMP Show 72: Migrate From Rails to Jekyll (Part 5)](https://youtu.be/eRCGlsGHNNM)
