@@ -2,7 +2,7 @@
 
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=fe8e86)](https://github.com/sponsors/saturdaymp)
 
-The official website for Saturday Morning Productions, built with Jekyll and hosted on GitHub Pages.  Let me know if you spot any issues, have an improvement, or a questions by opening a [Issue](https://github.com/saturdaymp/saturdaymp.github.io/issues) or [Pull Request](https://github.com/saturdaymp/saturdaymp.github.io/pulls).  This site is public so we can all learn from it!
+The official website for Saturday Morning Productions, built with Jekyll and hosted on GitHub Pages.  Let me know if you spot any issues, have an improvement, or any questions by opening a [Issue](https://github.com/saturdaymp/saturdaymp.github.io/issues) or [Pull Request](https://github.com/saturdaymp/saturdaymp.github.io/pulls).  This site is public so we can all learn from it!
 
 See how this site was migrated from a Rails app to Jekyll:
 
