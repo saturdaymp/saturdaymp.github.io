@@ -1,5 +1,13 @@
 [
   {
+    "id": "X09Kiow2RsI",
+    "title": "SaturdayMP Show 81: Creating PostCast (Part 3 – Creating GitHub Action)",
+    "description": "In this episode we create a GitHub action to build PostCast*. Actually, it was more of a test if we could get GitHub actions working ...",
+    "publishedAt": "2026-01-21T15:21:34Z",
+    "thumbnail": "https://i.ytimg.com/vi/X09Kiow2RsI/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/X09Kiow2RsI/mqdefault.jpg"
+  },
+  {
     "id": "UwfyyYPsOwo",
     "title": "SaturdayMP Show 80: Creating PostCast (Part 2 – Testing Fyne Packaging)",
     "description": "In this episode I'm joined by Omar, and we try cross-compiling and packaging our Fyne example app for Linux, Windows, and ...",
@@ -70,13 +78,5 @@
     "publishedAt": "2025-10-29T06:00:30Z",
     "thumbnail": "https://i.ytimg.com/vi/eRCGlsGHNNM/hqdefault.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/eRCGlsGHNNM/mqdefault.jpg"
-  },
-  {
-    "id": "eJbMn75dQKo",
-    "title": "SaturdayMP Show 71: Migrate From Rails to Jekyll (Part 4 of 7)",
-    "description": "In this episode I fixe the broken build from the last episode. I also created a Bootstrap plugin to find the Bootstrap SCSS path to ...",
-    "publishedAt": "2025-10-23T20:49:12Z",
-    "thumbnail": "https://i.ytimg.com/vi/eJbMn75dQKo/hqdefault.jpg",
-    "thumbnailMedium": "https://i.ytimg.com/vi/eJbMn75dQKo/mqdefault.jpg"
   }
 ]
