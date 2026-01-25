@@ -68,7 +68,7 @@ The site displays videos from The SaturdayMP Show YouTube channel. A GitHub Acti
    - Go to Actions > "Fetch YouTube Videos"
    - Click "Run workflow" to fetch videos
 
-The workflow runs automatically every Sunday at midnight UTC, creating a PR that auto-merges when checks pass. When new videos are detected, the workflow triggers the Jekyll deployment to rebuild and deploy the site.
+The workflow runs automatically every Sunday at midnight UTC, creating a PR that auto-merges when checks pass. When the PR is merged, the Jekyll deployment workflow is triggered to rebuild and deploy the site with the new videos.
 
 ### Manual Testing
 

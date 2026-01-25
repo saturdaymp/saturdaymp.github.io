@@ -68,11 +68,3 @@ jobs:
           # Note: Auto-merge will wait for required status checks (validate-youtube-data.yml)
           # Configure this in Settings > Branches > Branch protection rules
           gh pr merge "$BRANCH" --auto --merge
-
-      - name: Trigger site deployment
-        if: steps.auto-commit.outputs.changes_detected == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api repos/${{ github.repository }}/dispatches \
-            -f event_type=youtube-videos-updated
