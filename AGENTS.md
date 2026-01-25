@@ -116,7 +116,7 @@ The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 5. Uploads the build artifact
 6. Deploys to GitHub Pages
 
-**Note**: When triggered by the YouTube fetch workflow, the build only runs if the fetch workflow succeeded.
+**Note**: The YouTube fetch workflow only triggers a deployment when videos are actually updated, avoiding unnecessary rebuilds.
 
 ## YouTube Videos Integration
 
@@ -129,7 +129,7 @@ The site displays videos from The SaturdayMP Show YouTube channel. Videos are fe
    - Can be triggered manually from the Actions tab
    - Fetches latest 10 videos from the YouTube API
    - Creates a PR with auto-merge enabled
-   - When completed, triggers the Jekyll deployment workflow to rebuild the site
+   - When changes are detected, triggers the Jekyll deployment workflow via repository_dispatch
 
 2. **Fetch Script** ([scripts/fetch-youtube-videos.sh](scripts/fetch-youtube-videos.sh)):
    - Standalone bash script that fetches videos from YouTube API
