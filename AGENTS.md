@@ -51,10 +51,11 @@ This is a Jekyll-based GitHub Pages website for Saturday Morning Productions.
 │   └── workflows/
 │       ├── jekyll.yml    # GitHub Actions deployment workflow
 │       └── fetch-youtube-videos.yml  # YouTube video fetch workflow
-├── index.html            # Homepage
-├── videos.html           # SaturdayMP Show videos page
-├── about.md              # About page
-├── contact.md            # Contact page
+├── pages/                # Site pages
+│   ├── index.html        # Homepage (permalink: /)
+│   ├── about.md          # About page (permalink: /about/)
+│   ├── contact.md        # Contact page (permalink: /contact/)
+│   └── videos.html       # SaturdayMP Show videos page (permalink: /videos/)
 ├── favicon.ico           # Site favicon
 ├── Gemfile               # Ruby dependencies
 ├── docker-compose.yml    # Docker setup for local development
@@ -153,31 +154,32 @@ The site displays videos from The SaturdayMP Show YouTube channel. Videos are fe
 
 The site includes the following pages:
 
-1. **Homepage** ([index.html](index.html))
+1. **Homepage** ([pages/index.html](pages/index.html))
+   - Permalink: `/`
    - Uses Liquid templating and Bootstrap 5 components
    - Features: hero image, tagline section, three-column feature boxes
    - SaturdayMP Show section with latest video and show description
    - Includes: consult_button.html and box.html components
 
-2. **Videos Page** ([videos.html](videos.html))
+2. **Videos Page** ([pages/videos.html](pages/videos.html))
    - Permalink: `/videos/`
    - Displays The SaturdayMP Show episodes
    - Features latest video embed and grid of previous episodes
    - Data loaded from `_data/youtube_videos.json`
 
-3. **About Page** ([about.md](about.md))
+3. **About Page** ([pages/about.md](pages/about.md))
    - Permalink: `/about/`
    - Content: Company history and Weekly Dev Chat sponsorship
    - Includes: consult_button.html component
 
-4. **Contact Page** ([contact.md](contact.md))
+4. **Contact Page** ([pages/contact.md](pages/contact.md))
    - Permalink: `/contact/`
    - Content: Contact information, business hours, and email addresses
    - Features: Phone and email CTAs
 
 ### Adding New Pages
 
-Create a new `.md` file in the root directory with front matter:
+Create a new `.md` file in the `pages/` directory with front matter:
 
 ```markdown
 ---
