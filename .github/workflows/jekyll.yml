@@ -14,6 +14,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Runs after the Fetch YouTube Videos workflow completes
+  workflow_run:
+    workflows: ["Fetch YouTube Videos"]
+    types: [completed]
+    branches: [main]
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -30,6 +36,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    # Only run if not triggered by workflow_run, or if the triggering workflow succeeded
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
