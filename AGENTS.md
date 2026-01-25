@@ -102,7 +102,11 @@ bundle exec jekyll serve --livereload
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+The site automatically deploys to GitHub Pages via GitHub Actions. The deployment workflow is triggered when:
+
+1. Changes are pushed to the `main` branch
+2. Manual workflow dispatch from the Actions tab
+3. The "Fetch YouTube Videos" workflow completes successfully (ensures new videos are deployed automatically)
 
 The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 1. Checks out the repository
@@ -112,7 +116,7 @@ The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 5. Uploads the build artifact
 6. Deploys to GitHub Pages
 
-Manual deployment can be triggered via the Actions tab in GitHub using the `workflow_dispatch` event.
+**Note**: The deployment only runs for YouTube update PRs when they are merged, avoiding unnecessary rebuilds.
 
 ## YouTube Videos Integration
 
@@ -125,6 +129,7 @@ The site displays videos from The SaturdayMP Show YouTube channel. Videos are fe
    - Can be triggered manually from the Actions tab
    - Fetches latest 10 videos from the YouTube API
    - Creates a PR with auto-merge enabled
+   - When merged, triggers the Jekyll deployment workflow via pull_request event
 
 2. **Fetch Script** ([scripts/fetch-youtube-videos.sh](scripts/fetch-youtube-videos.sh)):
    - Standalone bash script that fetches videos from YouTube API
