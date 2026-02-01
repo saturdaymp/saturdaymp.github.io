@@ -1,5 +1,13 @@
 [
   {
+    "id": "1QtsLWfrNQQ",
+    "title": "SaturdayMP Show 82: Creating PostCast (Part 4 – Figuring out LinkedIn API)",
+    "description": "Turns out getting a LinkedIn API key is confusing, at least for us. Did you know you need an Organization Page on @LinkedIn to ...",
+    "publishedAt": "2026-01-28T07:00:00Z",
+    "thumbnail": "https://i.ytimg.com/vi/1QtsLWfrNQQ/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/1QtsLWfrNQQ/mqdefault.jpg"
+  },
+  {
     "id": "X09Kiow2RsI",
     "title": "SaturdayMP Show 81: Creating PostCast (Part 3 – Creating GitHub Action)",
     "description": "In this episode we create a GitHub action to build PostCast*. Actually, it was more of a test if we could get GitHub actions working ...",
@@ -78,5 +86,117 @@
     "publishedAt": "2025-10-29T06:00:30Z",
     "thumbnail": "https://i.ytimg.com/vi/eRCGlsGHNNM/hqdefault.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/eRCGlsGHNNM/mqdefault.jpg"
+  },
+  {
+    "id": "eJbMn75dQKo",
+    "title": "SaturdayMP Show 71: Migrate From Rails to Jekyll (Part 4 of 7)",
+    "description": "In this episode I fixe the broken build from the last episode. I also created a Bootstrap plugin to find the Bootstrap SCSS path to ...",
+    "publishedAt": "2025-10-23T20:49:12Z",
+    "thumbnail": "https://i.ytimg.com/vi/eJbMn75dQKo/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/eJbMn75dQKo/mqdefault.jpg"
+  },
+  {
+    "id": "0s_3jVIttnc",
+    "title": "SaturdayMP Show 70: Migrate From Rails to Jekyll (Part 3 of 7)",
+    "description": "I'm still not done migrating to Jekyll. In this video I struggle to get Bootstrap customizations working with Jekyll, and I figure out that ...",
+    "publishedAt": "2025-10-15T06:00:00Z",
+    "thumbnail": "https://i.ytimg.com/vi/0s_3jVIttnc/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/0s_3jVIttnc/mqdefault.jpg"
+  },
+  {
+    "id": "ShVTQ1wLTsI",
+    "title": "SaturdayMP Show 69: Migrate From Rails to Jekyll (Part 2 of 7)",
+    "description": "In this episode I start migrating my Rails website to Jekyll and get the home page mostly done with the help of Claude Code.",
+    "publishedAt": "2025-10-08T06:00:24Z",
+    "thumbnail": "https://i.ytimg.com/vi/ShVTQ1wLTsI/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/ShVTQ1wLTsI/mqdefault.jpg"
+  },
+  {
+    "id": "K2ddgnMDTFk",
+    "title": "SaturdayMP Show 68: Migrate From Rails to Jekyll (Part 1 of 7)",
+    "description": "In this episode I create an empty GitHub Pages Jekyll project with the long-term goal of moving the existing Rails SaturdayMP ...",
+    "publishedAt": "2025-10-01T06:00:23Z",
+    "thumbnail": "https://i.ytimg.com/vi/K2ddgnMDTFk/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/K2ddgnMDTFk/mqdefault.jpg"
+  },
+  {
+    "id": "IiJC2aLvGkA",
+    "title": "SaturdayMP Show 67: picoCTF (Forbidden Paths &amp; Login)",
+    "description": "In this episode I solve the Forbidden Paths and Login @picoCTF challenges. Code on GitHub: ...",
+    "publishedAt": "2025-04-09T06:00:11Z",
+    "thumbnail": "https://i.ytimg.com/vi/IiJC2aLvGkA/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/IiJC2aLvGkA/mqdefault.jpg"
+  },
+  {
+    "id": "3dNMOff-Gp0",
+    "title": "SaturdayMP Show 66: picoCTF Format String 2 (Solved in One Long Video)",
+    "description": "In this episode I solve the @picoCTF Format String 2 problem in my longest video yet. Jump right to the end if you want to see the ...",
+    "publishedAt": "2025-02-19T07:00:01Z",
+    "thumbnail": "https://i.ytimg.com/vi/3dNMOff-Gp0/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/3dNMOff-Gp0/mqdefault.jpg"
+  },
+  {
+    "id": "CzHv3uY2KiU",
+    "title": "SaturdayMP Show 65: Something&#39;s Rotten at the Gilded Rose: A Python Refactoring Tale",
+    "description": "In this episode I tackle the famous Gilded Rose Kata as practice for my upcoming Dev Edmonton JavaScript, Python & Ruby ...",
+    "publishedAt": "2025-02-05T07:00:11Z",
+    "thumbnail": "https://i.ytimg.com/vi/CzHv3uY2KiU/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/CzHv3uY2KiU/mqdefault.jpg"
+  },
+  {
+    "id": "AT8w2fsgzsA",
+    "title": "SaturdayMP Show 64: picoCTF Format String 3 (Part 1 - Watch me Fail)",
+    "description": "In this episode you can watch me fail to solve the picoCTF Format String 3 problem. My lack of low-level programming is ...",
+    "publishedAt": "2025-01-29T15:46:57Z",
+    "thumbnail": "https://i.ytimg.com/vi/AT8w2fsgzsA/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/AT8w2fsgzsA/mqdefault.jpg"
+  },
+  {
+    "id": "jOh7NLj7BxI",
+    "title": "SaturdayMP Show 63: Advent of Code 2024 Day 12 (Part 3 - Solved!)",
+    "description": "In this episode I finish the Advent of Code 2024 Day 12 problem! I also figured out how to do parameterized tests in Python.",
+    "publishedAt": "2025-01-22T07:00:34Z",
+    "thumbnail": "https://i.ytimg.com/vi/jOh7NLj7BxI/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/jOh7NLj7BxI/mqdefault.jpg"
+  },
+  {
+    "id": "p9bSVRxkGlk",
+    "title": "SaturdayMP Show 62: Advent of Code 2024 Day 12 (Part 2 - Area Calculated)",
+    "description": "In this episode I actually make some progress on the Advent of Code Day 12 problem and can calculate the area of a plot starting ...",
+    "publishedAt": "2025-01-17T21:59:20Z",
+    "thumbnail": "https://i.ytimg.com/vi/p9bSVRxkGlk/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/p9bSVRxkGlk/mqdefault.jpg"
+  },
+  {
+    "id": "RhSQ49SVAtY",
+    "title": "SaturdayMP Show 61: Advent of Code 2024 Day 12 (Part 1 - Python Import Difficulties)",
+    "description": "In this episode I attempt the Advent of Code Day 12 challenge. I didn't get very far as I struggled to figure out how imports work in ...",
+    "publishedAt": "2025-01-08T07:00:22Z",
+    "thumbnail": "https://i.ytimg.com/vi/RhSQ49SVAtY/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/RhSQ49SVAtY/mqdefault.jpg"
+  },
+  {
+    "id": "wKnpfxOWB0o",
+    "title": "SaturdayMP Show 60: Advent of Code 2024 Day 2",
+    "description": "In this episode I solve the Advent of Code 2024 Day 2 problem. I solve it using Python, a language I'm not very familiar with.",
+    "publishedAt": "2024-12-13T23:01:13Z",
+    "thumbnail": "https://i.ytimg.com/vi/wKnpfxOWB0o/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/wKnpfxOWB0o/mqdefault.jpg"
+  },
+  {
+    "id": "c6_i8HRNf8o",
+    "title": "SaturdayMP Show 59: Customize Office Ribbon",
+    "description": "In this episode I show how to customize @Microsoft365 Word Ribbon (i.e. menu) without any developer tools. Inspired by a client ...",
+    "publishedAt": "2024-12-04T07:00:16Z",
+    "thumbnail": "https://i.ytimg.com/vi/c6_i8HRNf8o/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/c6_i8HRNf8o/mqdefault.jpg"
+  },
+  {
+    "id": "ga99fYkwVJA",
+    "title": "SaturdayMP Show 58: Human Resource Machine (Duplicate Machine Size Challenge)",
+    "description": "In this episode I solve the Human Resource Machine Duplicate Machine size challenge! Sorry for the spoiler, I am really excited ...",
+    "publishedAt": "2024-11-27T07:00:21Z",
+    "thumbnail": "https://i.ytimg.com/vi/ga99fYkwVJA/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/ga99fYkwVJA/mqdefault.jpg"
   }
 ]
