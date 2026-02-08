@@ -35,6 +35,7 @@ This website automatically deploys to GitHub Pages using GitHub Actions. The dep
 
 1. Changes are pushed or merged to the `main` branch
 2. Manual workflow dispatch from the Actions tab
+3. A YouTube videos update PR is merged into `main` (via `pull_request: closed` event)
 
 **Deployment Process:**
 1. **Build Job**: Sets up Ruby 3.4, installs dependencies via Bundler, and builds the Jekyll site
@@ -67,7 +68,7 @@ The site displays videos from The SaturdayMP Show YouTube channel. A GitHub Acti
    - Go to Actions > "Fetch YouTube Videos"
    - Click "Run workflow" to fetch videos
 
-The workflow runs automatically every Sunday at midnight UTC, creating a PR that auto-merges when checks pass.
+The workflow runs automatically every Sunday at midnight UTC, creating a PR that auto-merges when checks pass. When the PR is merged, the Jekyll deployment workflow is triggered to rebuild and deploy the site with the new videos.
 
 ### Manual Testing
 

@@ -14,22 +14,32 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Runs when a YouTube videos update PR is merged
+  pull_request:
+    types: [closed]
+    branches: [main]
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment, cancelling in-progress runs in favour of the latest queued.
+# Both push and pull_request triggers can fire for the same merge; cancel-in-progress avoids duplicates.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    # Run on push/workflow_dispatch, or when a YouTube update PR is merged
+    if: >
+      github.event_name != 'pull_request' ||
+      (github.event.pull_request.merged == true &&
+       startsWith(github.event.pull_request.head.ref, 'automated/update-youtube-videos-'))
     steps:
       - name: Checkout
         uses: actions/checkout@v6

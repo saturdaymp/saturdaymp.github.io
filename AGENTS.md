@@ -50,7 +50,8 @@ This is a Jekyll-based GitHub Pages website for Saturday Morning Productions.
 ├── .github/
 │   └── workflows/
 │       ├── jekyll.yml    # GitHub Actions deployment workflow
-│       └── fetch-youtube-videos.yml  # YouTube video fetch workflow
+│       ├── fetch-youtube-videos.yml  # YouTube video fetch workflow
+│       └── validate-youtube-data.yml # YouTube data validation (PR check)
 ├── pages/                # Site pages
 │   ├── index.html        # Homepage (permalink: /)
 │   ├── about.md          # About page (permalink: /about/)
@@ -102,7 +103,11 @@ bundle exec jekyll serve --livereload
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+The site automatically deploys to GitHub Pages via GitHub Actions. The deployment workflow is triggered when:
+
+1. Changes are pushed to the `main` branch
+2. Manual workflow dispatch from the Actions tab
+3. A YouTube videos update PR is merged into `main` (via `pull_request: closed` event)
 
 The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 1. Checks out the repository
@@ -112,7 +117,7 @@ The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 5. Uploads the build artifact
 6. Deploys to GitHub Pages
 
-Manual deployment can be triggered via the Actions tab in GitHub using the `workflow_dispatch` event.
+**Note**: The deployment only runs for YouTube update PRs when they are merged, avoiding unnecessary rebuilds. The concurrency group uses `cancel-in-progress: true` so that if both `push` and `pull_request` events fire for the same merge, only the latest run completes.
 
 ## YouTube Videos Integration
 
@@ -125,15 +130,21 @@ The site displays videos from The SaturdayMP Show YouTube channel. Videos are fe
    - Can be triggered manually from the Actions tab
    - Fetches latest 10 videos from the YouTube API
    - Creates a PR with auto-merge enabled
+   - When merged, triggers the Jekyll deployment workflow via `pull_request: closed` event
 
-2. **Fetch Script** ([scripts/fetch-youtube-videos.sh](scripts/fetch-youtube-videos.sh)):
+2. **Validation Workflow** ([.github/workflows/validate-youtube-data.yml](.github/workflows/validate-youtube-data.yml)):
+   - Runs as a required status check on PRs that modify `_data/youtube_videos.json`
+   - Validates JSON structure, video count, required fields, and YouTube ID format
+   - Must pass before auto-merge can complete
+
+3. **Fetch Script** ([scripts/fetch-youtube-videos.sh](scripts/fetch-youtube-videos.sh)):
    - Standalone bash script that fetches videos from YouTube API
    - Can be run manually for testing:
      ```bash
      YOUTUBE_API_KEY=your_key ./scripts/fetch-youtube-videos.sh
      ```
 
-3. **Data Storage** (`_data/youtube_videos.json`):
+4. **Data Storage** (`_data/youtube_videos.json`):
    - Stores video metadata (id, title, description, thumbnail URLs)
    - Automatically updated by the GitHub Actions workflow
 
@@ -255,3 +266,7 @@ Main dependencies (defined in [Gemfile](Gemfile)):
 Note: The site previously used the `github-pages` gem but now uses standalone Jekyll for more control over versions.
 
 See [Gemfile.lock](Gemfile.lock) for complete dependency tree.
+
+## AI Agent Guidelines
+
+- **No AI attribution**: Do not add "Co-Authored-By", "Authored by Claude", or similar AI attribution lines to commits, PRs, or any other content.
