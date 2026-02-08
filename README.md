@@ -35,7 +35,7 @@ This website automatically deploys to GitHub Pages using GitHub Actions. The dep
 
 1. Changes are pushed or merged to the `main` branch
 2. Manual workflow dispatch from the Actions tab
-3. The "Fetch YouTube Videos" workflow completes successfully (ensures new videos are deployed automatically)
+3. A YouTube videos update PR is merged into `main` (via `pull_request: closed` event)
 
 **Deployment Process:**
 1. **Build Job**: Sets up Ruby 3.4, installs dependencies via Bundler, and builds the Jekyll site
