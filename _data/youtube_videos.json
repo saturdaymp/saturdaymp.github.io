@@ -1,5 +1,13 @@
 [
   {
+    "id": "jvj9GxPCYSo",
+    "title": "SaturdayMP Show 83: Creating PostCast (Part 5 – Go PoC for LinkedIn API)",
+    "description": "We get a Proof of Concept (PoC) in Go that completes the LinkedIn authorization. We end up figuring out the difference between a ...",
+    "publishedAt": "2026-02-04T07:00:39Z",
+    "thumbnail": "https://i.ytimg.com/vi/jvj9GxPCYSo/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/jvj9GxPCYSo/mqdefault.jpg"
+  },
+  {
     "id": "1QtsLWfrNQQ",
     "title": "SaturdayMP Show 82: Creating PostCast (Part 4 – Figuring out LinkedIn API)",
     "description": "Turns out getting a LinkedIn API key is confusing, at least for us. Did you know you need an Organization Page on @LinkedIn to ...",
@@ -190,13 +198,5 @@
     "publishedAt": "2024-12-04T07:00:16Z",
     "thumbnail": "https://i.ytimg.com/vi/c6_i8HRNf8o/hqdefault.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/c6_i8HRNf8o/mqdefault.jpg"
-  },
-  {
-    "id": "ga99fYkwVJA",
-    "title": "SaturdayMP Show 58: Human Resource Machine (Duplicate Machine Size Challenge)",
-    "description": "In this episode I solve the Human Resource Machine Duplicate Machine size challenge! Sorry for the spoiler, I am really excited ...",
-    "publishedAt": "2024-11-27T07:00:21Z",
-    "thumbnail": "https://i.ytimg.com/vi/ga99fYkwVJA/hqdefault.jpg",
-    "thumbnailMedium": "https://i.ytimg.com/vi/ga99fYkwVJA/mqdefault.jpg"
   }
 ]
