@@ -18,6 +18,8 @@ on:
   pull_request:
     types: [closed]
     branches: [main]
+    paths:
+      - '_data/youtube_videos.json'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
