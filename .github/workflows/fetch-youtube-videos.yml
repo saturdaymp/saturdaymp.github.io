@@ -52,7 +52,7 @@ jobs:
       - name: Create PR with Auto-merge
         if: steps.auto-commit.outputs.changes_detected == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.WEBSITE_DEPLOY_PAT }}
           BRANCH: ${{ env.BRANCH }}
         run: |
           # Create PR if one doesn't exist
