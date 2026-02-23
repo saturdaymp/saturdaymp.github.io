@@ -19,15 +19,43 @@ Saturday Morning Productions is a software development and consulting company ba
 
 ## Running Locally
 
-To run the website locally using Docker:
+### Using Docker (Recommended)
 
 ```bash
 docker compose up app
 ```
 
+### Manual Setup
+
+```bash
+bundle install
+bundle exec jekyll serve --livereload
+```
+
 The site will be available at:
 - Website: [http://localhost:4000](http://localhost:4000)
 - LiveReload: Port 35729 (automatic browser refresh on file changes)
+
+## Architecture
+
+The site uses Jekyll 4.4 with Bootstrap 5.3 loaded via a **Ruby gem** (not a CDN). Custom plugins in `_plugins/` handle the integration:
+- `bootstrap_gem_path.rb` adds Bootstrap's Sass to Jekyll's load paths
+- `bootstrap_js_copier.rb` copies Bootstrap JS from the gem to `assets/js/vendor/` at build time
+
+### Adding New Pages
+
+Create a new file in `pages/` with front matter:
+
+```markdown
+---
+layout: default
+title: Page Title
+permalink: /page-url/
+description: Page description for SEO
+---
+
+Page content here.
+```
 
 ## Deployment
 
