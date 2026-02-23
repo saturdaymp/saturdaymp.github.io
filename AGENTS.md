@@ -105,9 +105,8 @@ bundle exec jekyll serve --livereload
 
 The site automatically deploys to GitHub Pages via GitHub Actions. The deployment workflow is triggered when:
 
-1. Changes are pushed to the `main` branch
+1. Changes are pushed to the `main` branch (includes YouTube video update PR merges)
 2. Manual workflow dispatch from the Actions tab
-3. A YouTube videos update PR is merged into `main` (via `pull_request: closed` event)
 
 The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 1. Checks out the repository
@@ -117,7 +116,7 @@ The workflow ([.github/workflows/jekyll.yml](.github/workflows/jekyll.yml)):
 5. Uploads the build artifact
 6. Deploys to GitHub Pages
 
-**Note**: The deployment only runs for YouTube update PRs when they are merged, avoiding unnecessary rebuilds. The concurrency group uses `cancel-in-progress: true` so that if both `push` and `pull_request` events fire for the same merge, only the latest run completes.
+**Note**: The concurrency group uses `cancel-in-progress: true` so that if multiple pushes happen in quick succession, only the latest deployment completes.
 
 ## YouTube Videos Integration
 
@@ -129,8 +128,8 @@ The site displays videos from The SaturdayMP Show YouTube channel. Videos are fe
    - Runs weekly on Sunday at midnight UTC
    - Can be triggered manually from the Actions tab
    - Fetches latest 10 videos from the YouTube API
-   - Creates a PR with auto-merge enabled
-   - When merged, triggers the Jekyll deployment workflow via `pull_request: closed` event
+   - Creates a PR with auto-merge enabled using `WEBSITE_DEPLOY_PAT`
+   - When merged, the push to `main` triggers the Jekyll deployment workflow
 
 2. **Validation Workflow** ([.github/workflows/validate-youtube-data.yml](.github/workflows/validate-youtube-data.yml)):
    - Runs as a required status check on PRs that modify `_data/youtube_videos.json`
@@ -156,7 +155,13 @@ The site displays videos from The SaturdayMP Show YouTube channel. Videos are fe
    - Create an API key
    - Add as GitHub Secret: `YOUTUBE_API_KEY`
 
-2. **Repository Settings**:
+2. **Personal Access Token (PAT)**:
+   - Create a fine-grained PAT scoped to this repository
+   - Grant permissions: Contents (read/write), Pull requests (read/write)
+   - Add as GitHub Secret: `WEBSITE_DEPLOY_PAT`
+   - Required so that PR merges trigger the deployment workflow (events from `GITHUB_TOKEN` do not trigger other workflows)
+
+3. **Repository Settings**:
    - Enable "Allow auto-merge" in Settings > General > Pull Requests
 
 ## Content Management
