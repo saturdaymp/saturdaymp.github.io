@@ -35,9 +35,9 @@ jobs:
       - name: Validate video content
         run: |
           # Check that each video has required fields
-          missing=$(jq '[.[] | select(.id == null or .title == null or .thumbnails == null)] | length' _data/youtube_videos.json)
+          missing=$(jq '[.[] | select(.id == null or .title == null or .thumbnail == null)] | length' _data/youtube_videos.json)
           if [ "$missing" -gt 0 ]; then
-            echo "::error::$missing videos are missing required fields (id, title, or thumbnails)"
+            echo "::error::$missing videos are missing required fields (id, title, or thumbnail)"
             exit 1
           fi
           echo "✓ All videos have required fields"
@@ -57,6 +57,14 @@ jobs:
             exit 1
           fi
           echo "✓ All videos have non-empty titles"
+
+          # Check that each video has a numeric viewCount >= 0
+          invalid_views=$(jq '[.[] | select(.viewCount == null or (.viewCount | type) != "number" or .viewCount < 0)] | length' _data/youtube_videos.json)
+          if [ "$invalid_views" -gt 0 ]; then
+            echo "::error::$invalid_views videos have missing or invalid viewCount"
+            exit 1
+          fi
+          echo "✓ All videos have valid viewCount"
 
       - name: Summary
         run: |
