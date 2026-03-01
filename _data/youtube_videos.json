@@ -1,5 +1,13 @@
 [
   {
+    "id": "PRRHTxUAo00",
+    "title": "SaturdayMP Show 86: Creating PostCast (Part 8 – Investigate Keyring Libraries)",
+    "description": "In this episode Omar Ashour and myself investigate several Golang keyring libraries and try to get the keyring to work on my ...",
+    "publishedAt": "2026-02-26T16:56:38Z",
+    "thumbnail": "https://i.ytimg.com/vi/PRRHTxUAo00/hqdefault.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/PRRHTxUAo00/mqdefault.jpg"
+  },
+  {
     "id": "F-a39bQmylc",
     "title": "SaturdayMP Show 85: Creating PostCast (Part 7 – Prompt for LinkedIn Credentials)",
     "description": "In this episode Omar and myself hook up the Post to LinkedIn button and prompt the user to enter the credentials for LinkedIn, and ...",
@@ -70,13 +78,5 @@
     "publishedAt": "2025-12-10T22:28:07Z",
     "thumbnail": "https://i.ytimg.com/vi/FCAHNP9kJ3U/hqdefault.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/FCAHNP9kJ3U/mqdefault.jpg"
-  },
-  {
-    "id": "7EN_NzzzRnM",
-    "title": "SaturdayMP Show 76: Hack the Box - Lock (Part 2 - Both Flags)",
-    "description": "Part 2 of the Lock machine. I was able to capture both the user and system flags with the help of the walkthrough. My biggest ...",
-    "publishedAt": "2025-12-03T07:00:06Z",
-    "thumbnail": "https://i.ytimg.com/vi/7EN_NzzzRnM/hqdefault.jpg",
-    "thumbnailMedium": "https://i.ytimg.com/vi/7EN_NzzzRnM/mqdefault.jpg"
   }
 ]
