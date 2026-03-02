@@ -126,7 +126,7 @@ for vid_id in $all_ids; do
             exit 1
         fi
 
-        batch_stats=$(echo "$stats_response" | jq '[.items[] | {(.id): (.statistics.viewCount | tonumber)}] | add // {}')
+        batch_stats=$(echo "$stats_response" | jq '[.items[] | {(.id): (.statistics.viewCount | tonumber? // 0)}] | add // {}')
         stats=$(echo "$stats" "$batch_stats" | jq -s '.[0] * .[1]')
 
         batch_ids=""
