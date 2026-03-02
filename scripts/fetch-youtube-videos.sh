@@ -33,9 +33,13 @@ if [ -f "$OUTPUT_FILE" ]; then
 fi
 
 # -----------------------------------------------------------
-# Phase 1: Fetch all videos via Search API (paginated)
+# Phase 1: Fetch all videos via PlaylistItems API (paginated)
 # -----------------------------------------------------------
-echo "Fetching all videos from channel $CHANNEL_ID..."
+# The uploads playlist ID is the channel ID with "UC" replaced by "UU".
+# The Search API is unreliable and often silently omits videos;
+# PlaylistItems reliably returns every upload.
+UPLOADS_PLAYLIST_ID="UU${CHANNEL_ID#UC}"
+echo "Fetching all videos from uploads playlist $UPLOADS_PLAYLIST_ID..."
 
 tmp_dir=$(mktemp -d)
 trap 'rm -rf "$tmp_dir"' EXIT
@@ -46,7 +50,7 @@ page=0
 while true; do
     page=$((page + 1))
 
-    url="https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=50&type=video"
+    url="https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${UPLOADS_PLAYLIST_ID}&part=snippet&maxResults=50"
     if [ -n "$page_token" ]; then
         url="${url}&pageToken=${page_token}"
     fi
@@ -55,7 +59,7 @@ while true; do
 
     # Check for API errors
     if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
-        echo "Search API Error (page $page):" >&2
+        echo "PlaylistItems API Error (page $page):" >&2
         echo "$response" | jq '.error' >&2
         exit 1
     fi
@@ -65,13 +69,13 @@ while true; do
     echo "  Page $page: fetched $page_count videos"
 
     if [ "$page_count" -eq 0 ] && [ "$page" -eq 1 ]; then
-        echo "Warning: No videos found for channel $CHANNEL_ID" >&2
+        echo "Warning: No videos found for playlist $UPLOADS_PLAYLIST_ID" >&2
         exit 1
     fi
 
     # Transform and accumulate
     page_videos=$(echo "$response" | jq '[.items[] | {
-        id: .id.videoId,
+        id: .snippet.resourceId.videoId,
         title: .snippet.title,
         description: .snippet.description,
         publishedAt: .snippet.publishedAt,
