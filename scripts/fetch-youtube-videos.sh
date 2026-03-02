@@ -88,7 +88,7 @@ while true; do
     fi
 done
 
-all_videos=$(jq -s 'add' "$tmp_dir"/page_*.json)
+all_videos=$(jq -s 'add | unique_by(.id)' "$tmp_dir"/page_*.json)
 total_videos=$(echo "$all_videos" | jq 'length')
 echo "Total videos fetched: $total_videos"
 
