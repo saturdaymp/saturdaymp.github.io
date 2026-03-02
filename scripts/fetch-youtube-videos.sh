@@ -37,7 +37,9 @@ fi
 # -----------------------------------------------------------
 echo "Fetching all videos from channel $CHANNEL_ID..."
 
-all_videos="[]"
+tmp_dir=$(mktemp -d)
+trap 'rm -rf "$tmp_dir"' EXIT
+
 page_token=""
 page=0
 
@@ -77,7 +79,7 @@ while true; do
         thumbnailMedium: .snippet.thumbnails.medium.url
     }]')
 
-    all_videos=$(echo "$all_videos" "$page_videos" | jq -s '.[0] + .[1]')
+    echo "$page_videos" > "$tmp_dir/page_${page}.json"
 
     # Check for next page
     page_token=$(echo "$response" | jq -r '.nextPageToken // empty')
@@ -86,6 +88,7 @@ while true; do
     fi
 done
 
+all_videos=$(jq -s 'add' "$tmp_dir"/page_*.json)
 total_videos=$(echo "$all_videos" | jq 'length')
 echo "Total videos fetched: $total_videos"
 
