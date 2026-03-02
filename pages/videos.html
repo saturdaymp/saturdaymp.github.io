@@ -84,13 +84,17 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
         </div>
     </section>
 
-    <!-- Random Videos (shuffled client-side) -->
+    <!-- Random Videos (rendered by Liquid, picked client-side on each page load) -->
     <section class="videos-grid-section videos-random">
         <div class="container">
-            <h2>Discover Something New</h2>
+            <div class="text-center mb-3">
+                <h2>Discover Something New</h2>
+                <button id="shuffle-btn" class="btn btn-primary btn-lg" type="button">Shuffle</button>
+            </div>
             <div class="row" id="random-videos">
                 {% for video in site.data.youtube_videos %}
-                <div class="col-md-6 col-lg-4 mb-4 videos-random-candidate" data-video-id="{{ video.id }}" style="display: none;">
+                {% if video.id != latest_video.id %}
+                <div class="col-md-6 col-lg-4 mb-4 random-candidate" style="display: none;">
                     <div class="videos-card">
                         <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
                             <img data-src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
@@ -101,6 +105,7 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                         <h4 class="videos-card-title">{{ video.title }}</h4>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -108,37 +113,33 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
 
     <script>
     (function() {
-        var candidates = Array.from(document.querySelectorAll('.videos-random-candidate'));
-        // Exclude the featured video (first in the list) from random picks
-        var featuredId = '{{ latest_video.id }}';
-        candidates = candidates.filter(function(el) {
-            return el.getAttribute('data-video-id') !== featuredId;
-        });
+        var cards = Array.from(document.querySelectorAll('.random-candidate'));
+        var count = Math.min(3, cards.length);
 
-        // Fisher-Yates shuffle
-        for (var i = candidates.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = candidates[i];
-            candidates[i] = candidates[j];
-            candidates[j] = temp;
-        }
-
-        // Show 3 random videos
-        var shown = 0;
-        for (var k = 0; k < candidates.length && shown < 3; k++) {
-            var el = candidates[k];
-            var img = el.querySelector('img[data-src]');
-            if (img) {
-                img.src = img.getAttribute('data-src');
+        function pickRandom() {
+            // Hide all cards
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.display = 'none';
             }
-            el.style.display = '';
-            shown++;
+
+            // Pick 3 random by partial shuffle
+            for (var i = 0; i < count; i++) {
+                var j = i + Math.floor(Math.random() * (cards.length - i));
+                var temp = cards[i];
+                cards[i] = cards[j];
+                cards[j] = temp;
+            }
+
+            // Show picked cards and load their thumbnails
+            for (var i = 0; i < count; i++) {
+                var img = cards[i].querySelector('img[data-src]');
+                if (img) img.src = img.getAttribute('data-src');
+                cards[i].style.display = '';
+            }
         }
 
-        // Remove candidates that weren't selected
-        candidates.slice(shown).forEach(function(el) {
-            el.remove();
-        });
+        pickRandom();
+        document.getElementById('shuffle-btn').addEventListener('click', pickRandom);
     })();
     </script>
 
@@ -160,8 +161,8 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
 <section class="videos-subscribe">
     <div class="container">
         <h5>Subscribe for weekly episodes</h5>
-        <a href="https://www.youtube.com/@saturdaymp?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Subscribe on YouTube
+        <a href="https://www.youtube.com/@saturdaymp?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Subscribe
         </a>
     </div>
 </section>
