@@ -51,7 +51,7 @@ while true; do
         url="${url}&pageToken=${page_token}"
     fi
 
-    response=$(curl -s "$url")
+    response=$(curl -fsS "$url")
 
     # Check for API errors
     if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
@@ -118,7 +118,7 @@ for vid_id in $all_ids; do
         batch_num=$((batch_num + 1))
         echo "  Statistics batch $batch_num ($batch_count videos)..."
 
-        stats_response=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${batch_ids}&part=statistics")
+        stats_response=$(curl -fsS "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${batch_ids}&part=statistics")
 
         if echo "$stats_response" | jq -e '.error' > /dev/null 2>&1; then
             echo "Videos API Error (batch $batch_num):" >&2
@@ -139,7 +139,7 @@ if [ "$batch_count" -gt 0 ]; then
     batch_num=$((batch_num + 1))
     echo "  Statistics batch $batch_num ($batch_count videos)..."
 
-    stats_response=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${batch_ids}&part=statistics")
+    stats_response=$(curl -fsS "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${batch_ids}&part=statistics")
 
     if echo "$stats_response" | jq -e '.error' > /dev/null 2>&1; then
         echo "Videos API Error (batch $batch_num):" >&2
