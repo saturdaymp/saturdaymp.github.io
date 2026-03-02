@@ -16,6 +16,8 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
     {% assign latest_video = site.data.youtube_videos | first %}
 
     {% unless latest_video.id == "PLACEHOLDER" %}
+
+    <!-- Featured: Latest Video -->
     <section class="videos-featured">
         <div class="container">
             <h2>Latest Episode</h2>
@@ -29,17 +31,18 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                     </iframe>
                 </div>
                 <h3 class="videos-featured-title">{{ latest_video.title }}</h3>
-                <p class="videos-featured-description">{{ latest_video.description }}</p>
+                <p class="videos-featured-description">{{ latest_video.description | truncate: 200 }}</p>
             </div>
         </div>
     </section>
 
+    <!-- Recent Episodes (next 3 after featured) -->
     {% if site.data.youtube_videos.size > 1 %}
     <section class="videos-grid-section">
         <div class="container">
-            <h2>Previous Episodes</h2>
+            <h2>Recent Episodes</h2>
             <div class="row">
-                {% for video in site.data.youtube_videos offset:1 limit:9 %}
+                {% for video in site.data.youtube_videos offset:1 limit:3 %}
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="videos-card">
                         <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
@@ -56,6 +59,88 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
         </div>
     </section>
     {% endif %}
+
+    <!-- Most Popular by View Count -->
+    {% assign popular_videos = site.data.youtube_videos | sort: "viewCount" | reverse %}
+    <section class="videos-grid-section videos-popular">
+        <div class="container">
+            <h2>Most Popular</h2>
+            <div class="row">
+                {% for video in popular_videos limit:3 %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="videos-card">
+                        <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <div class="videos-card-overlay">
+                                <span class="videos-play-icon">&#9658;</span>
+                            </div>
+                        </a>
+                        <h4 class="videos-card-title">{{ video.title }}</h4>
+                        <span class="videos-view-count">{{ video.viewCount }} views</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Random Videos (shuffled client-side) -->
+    <section class="videos-grid-section videos-random">
+        <div class="container">
+            <h2>Discover Something New</h2>
+            <div class="row" id="random-videos">
+                {% for video in site.data.youtube_videos %}
+                <div class="col-md-6 col-lg-4 mb-4 videos-random-candidate" data-video-id="{{ video.id }}" style="display: none;">
+                    <div class="videos-card">
+                        <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
+                            <img data-src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <div class="videos-card-overlay">
+                                <span class="videos-play-icon">&#9658;</span>
+                            </div>
+                        </a>
+                        <h4 class="videos-card-title">{{ video.title }}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function() {
+        var candidates = Array.from(document.querySelectorAll('.videos-random-candidate'));
+        // Exclude the featured video (first in the list) from random picks
+        var featuredId = '{{ latest_video.id }}';
+        candidates = candidates.filter(function(el) {
+            return el.getAttribute('data-video-id') !== featuredId;
+        });
+
+        // Fisher-Yates shuffle
+        for (var i = candidates.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = candidates[i];
+            candidates[i] = candidates[j];
+            candidates[j] = temp;
+        }
+
+        // Show 3 random videos
+        var shown = 0;
+        for (var k = 0; k < candidates.length && shown < 3; k++) {
+            var el = candidates[k];
+            var img = el.querySelector('img[data-src]');
+            if (img) {
+                img.src = img.getAttribute('data-src');
+            }
+            el.style.display = '';
+            shown++;
+        }
+
+        // Remove candidates that weren't selected
+        candidates.slice(shown).forEach(function(el) {
+            el.remove();
+        });
+    })();
+    </script>
 
     {% else %}
     <section class="videos-setup">
