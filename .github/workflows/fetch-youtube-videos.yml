@@ -46,7 +46,7 @@ jobs:
           commit_message: "Update YouTube videos data"
           branch: ${{ env.BRANCH }}
           create_branch: true
-          file_pattern: "_data/youtube_videos.json"
+          file_pattern: "_data/youtube_videos.json assets/images/youtube-thumbnails/*"
           push_options: "--force"
 
       - name: Create PR with Auto-merge

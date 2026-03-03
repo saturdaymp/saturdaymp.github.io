@@ -97,7 +97,7 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                 <div class="col-md-6 col-lg-4 mb-4 random-candidate" style="display: none;">
                     <div class="videos-card">
                         <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
-                            <img data-src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
                             <div class="videos-card-overlay">
                                 <span class="videos-play-icon">&#9658;</span>
                             </div>
@@ -116,11 +116,12 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
         var cards = Array.from(document.querySelectorAll('.random-candidate'));
         var count = Math.min(3, cards.length);
 
-        function pickRandom() {
-            // Hide all cards
-            for (var i = 0; i < cards.length; i++) {
-                cards[i].style.display = 'none';
-            }
+        var shuffling = false;
+        var container = document.getElementById('random-videos');
+
+        function pickNew() {
+            // Lock the container height to prevent layout shift
+            container.style.minHeight = container.offsetHeight + 'px';
 
             // Pick 3 random by partial shuffle
             for (var i = 0; i < count; i++) {
@@ -130,16 +131,57 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                 cards[j] = temp;
             }
 
-            // Show picked cards and load their thumbnails
+            // Hide all cards
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.display = 'none';
+                cards[i].classList.remove('fade-out');
+            }
+
+            // Show picked cards starting faded out
             for (var i = 0; i < count; i++) {
-                var img = cards[i].querySelector('img[data-src]');
-                if (img) img.src = img.getAttribute('data-src');
+                cards[i].classList.add('fade-out');
                 cards[i].style.display = '';
+            }
+
+            // Use requestAnimationFrame to ensure the browser paints the
+            // faded-out state before we remove the class to trigger fade-in
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    for (var i = 0; i < count; i++) {
+                        cards[i].classList.remove('fade-out');
+                    }
+                    // Release the height lock after fade-in completes
+                    setTimeout(function() {
+                        container.style.minHeight = '';
+                        shuffling = false;
+                    }, 500);
+                });
+            });
+        }
+
+        function shuffle() {
+            if (shuffling) return;
+            shuffling = true;
+
+            // Find visible cards and fade them out
+            var visible = cards.filter(function(c) { return c.style.display !== 'none'; });
+            if (visible.length === 0) {
+                pickNew();
+                return;
+            }
+
+            visible[0].addEventListener('transitionend', function handler() {
+                visible[0].removeEventListener('transitionend', handler);
+                pickNew();
+            });
+
+            for (var i = 0; i < visible.length; i++) {
+                visible[i].classList.add('fade-out');
             }
         }
 
-        pickRandom();
-        document.getElementById('shuffle-btn').addEventListener('click', pickRandom);
+        pickNew();
+        document.getElementById('shuffle-btn').addEventListener('click', shuffle);
     })();
     </script>
 

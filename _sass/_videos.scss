@@ -125,6 +125,14 @@
     background-color: #FFFFFF;
 }
 
+.random-candidate {
+    transition: opacity 0.5s ease;
+}
+
+.random-candidate.fade-out {
+    opacity: 0;
+}
+
 // View count label
 .videos-view-count {
     display: inline-block;

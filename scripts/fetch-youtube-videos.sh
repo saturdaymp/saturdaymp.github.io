@@ -16,6 +16,7 @@ set -e
 # Configuration
 CHANNEL_ID="${CHANNEL_ID:-UCa--Aos-i1nb6CJalzhV-rg}"
 OUTPUT_FILE="_data/youtube_videos.json"
+THUMBNAIL_DIR="assets/images/youtube-thumbnails"
 
 # Validate API key
 if [ -z "$YOUTUBE_API_KEY" ]; then
@@ -31,6 +32,9 @@ if [ -f "$OUTPUT_FILE" ]; then
     rm "$OUTPUT_FILE"
     echo "Removed old video data"
 fi
+
+# Ensure thumbnails directory exists
+mkdir -p "$THUMBNAIL_DIR"
 
 # -----------------------------------------------------------
 # Phase 1: Fetch all videos via PlaylistItems API (paginated)
@@ -156,13 +160,40 @@ if [ "$batch_count" -gt 0 ]; then
 fi
 
 # -----------------------------------------------------------
-# Phase 3: Merge view counts into video data and save
+# Phase 3: Download thumbnails locally
+# -----------------------------------------------------------
+echo ""
+echo "Downloading thumbnails..."
+
+new_count=0
+existing_count=0
+for vid_id in $all_ids; do
+    thumb_url=$(echo "$all_videos" | jq -r --arg id "$vid_id" '.[] | select(.id == $id) | .thumbnail')
+    thumb_file="${THUMBNAIL_DIR}/${vid_id}.jpg"
+    if [ -n "$thumb_url" ] && [ "$thumb_url" != "null" ]; then
+        if [ -f "$thumb_file" ]; then
+            # Re-download only if the remote file is newer than the local copy
+            curl -fsS -z "$thumb_file" -o "$thumb_file" "$thumb_url"
+            existing_count=$((existing_count + 1))
+        else
+            curl -fsS -o "$thumb_file" "$thumb_url"
+            new_count=$((new_count + 1))
+        fi
+    fi
+done
+echo "Thumbnails: $new_count new, $existing_count checked for updates"
+
+# -----------------------------------------------------------
+# Phase 4: Merge view counts, update thumbnail paths, and save
 # -----------------------------------------------------------
 echo ""
 echo "Merging view counts and saving..."
 
-echo "$all_videos" | jq --argjson stats "$stats" '
-    [.[] | . + {viewCount: ($stats[.id] // 0)}]
+echo "$all_videos" | jq --argjson stats "$stats" --arg thumbdir "/$THUMBNAIL_DIR" '
+    [.[] | . + {
+        viewCount: ($stats[.id] // 0),
+        thumbnail: ($thumbdir + "/" + .id + ".jpg")
+    }]
     | sort_by(.publishedAt) | reverse
 ' > "$OUTPUT_FILE"
 
