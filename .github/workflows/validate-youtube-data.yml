@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
       - '_data/youtube_videos.json'
+      - 'assets/images/youtube-thumbnails/**'
 
 jobs:
   validate:
