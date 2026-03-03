@@ -155,7 +155,7 @@ if [ "$batch_count" -gt 0 ]; then
         exit 1
     fi
 
-    batch_stats=$(echo "$stats_response" | jq '[.items[] | {(.id): (.statistics.viewCount | tonumber)}] | add // {}')
+    batch_stats=$(echo "$stats_response" | jq '[.items[] | {(.id): (.statistics.viewCount | tonumber? // 0)}] | add // {}')
     stats=$(echo "$stats" "$batch_stats" | jq -s '.[0] * .[1]')
 fi
 
