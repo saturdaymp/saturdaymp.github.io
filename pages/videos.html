@@ -16,6 +16,8 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
     {% assign latest_video = site.data.youtube_videos | first %}
 
     {% unless latest_video.id == "PLACEHOLDER" %}
+
+    <!-- Featured: Latest Video -->
     <section class="videos-featured">
         <div class="container">
             <h2>Latest Episode</h2>
@@ -29,17 +31,18 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                     </iframe>
                 </div>
                 <h3 class="videos-featured-title">{{ latest_video.title }}</h3>
-                <p class="videos-featured-description">{{ latest_video.description }}</p>
+                <p class="videos-featured-description">{{ latest_video.description | truncate: 200 }}</p>
             </div>
         </div>
     </section>
 
+    <!-- Recent Episodes (next 3 after featured) -->
     {% if site.data.youtube_videos.size > 1 %}
     <section class="videos-grid-section">
         <div class="container">
-            <h2>Previous Episodes</h2>
+            <h2>Recent Episodes</h2>
             <div class="row">
-                {% for video in site.data.youtube_videos offset:1 limit:9 %}
+                {% for video in site.data.youtube_videos offset:1 limit:3 %}
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="videos-card">
                         <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
@@ -56,6 +59,131 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
         </div>
     </section>
     {% endif %}
+
+    <!-- Most Popular by View Count -->
+    {% assign popular_videos = site.data.youtube_videos | sort: "viewCount" | reverse %}
+    <section class="videos-grid-section videos-popular">
+        <div class="container">
+            <h2>Most Popular</h2>
+            <div class="row">
+                {% for video in popular_videos limit:3 %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="videos-card">
+                        <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <div class="videos-card-overlay">
+                                <span class="videos-play-icon">&#9658;</span>
+                            </div>
+                        </a>
+                        <h4 class="videos-card-title">{{ video.title }}</h4>
+                        <span class="videos-view-count">{{ video.viewCount }} views</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Random Videos (rendered by Liquid, picked client-side on each page load) -->
+    <section class="videos-grid-section videos-random">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2>Discover Something New</h2>
+                <button id="shuffle-btn" class="btn btn-primary btn-lg" type="button">Shuffle</button>
+            </div>
+            <div class="row" id="random-videos">
+                {% for video in site.data.youtube_videos %}
+                {% if video.id != latest_video.id %}
+                <div class="col-md-6 col-lg-4 mb-4 random-candidate" style="display: none;">
+                    <div class="videos-card">
+                        <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <div class="videos-card-overlay">
+                                <span class="videos-play-icon">&#9658;</span>
+                            </div>
+                        </a>
+                        <h4 class="videos-card-title">{{ video.title }}</h4>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function() {
+        var cards = Array.from(document.querySelectorAll('.random-candidate'));
+        var count = Math.min(3, cards.length);
+
+        var shuffling = false;
+        var container = document.getElementById('random-videos');
+
+        function pickNew() {
+            // Lock the container height to prevent layout shift
+            container.style.minHeight = container.offsetHeight + 'px';
+
+            // Pick 3 random by partial shuffle
+            for (var i = 0; i < count; i++) {
+                var j = i + Math.floor(Math.random() * (cards.length - i));
+                var temp = cards[i];
+                cards[i] = cards[j];
+                cards[j] = temp;
+            }
+
+            // Hide all cards
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.display = 'none';
+                cards[i].classList.remove('fade-out');
+            }
+
+            // Show picked cards starting faded out
+            for (var i = 0; i < count; i++) {
+                cards[i].classList.add('fade-out');
+                cards[i].style.display = '';
+            }
+
+            // Use requestAnimationFrame to ensure the browser paints the
+            // faded-out state before we remove the class to trigger fade-in
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    for (var i = 0; i < count; i++) {
+                        cards[i].classList.remove('fade-out');
+                    }
+                    // Release the height lock after fade-in completes
+                    setTimeout(function() {
+                        container.style.minHeight = '';
+                        shuffling = false;
+                    }, 500);
+                });
+            });
+        }
+
+        function shuffle() {
+            if (shuffling) return;
+            shuffling = true;
+
+            // Find visible cards and fade them out
+            var visible = cards.filter(function(c) { return c.style.display !== 'none'; });
+            if (visible.length === 0) {
+                pickNew();
+                return;
+            }
+
+            visible[0].addEventListener('transitionend', function handler() {
+                visible[0].removeEventListener('transitionend', handler);
+                pickNew();
+            });
+
+            for (var i = 0; i < visible.length; i++) {
+                visible[i].classList.add('fade-out');
+            }
+        }
+
+        pickNew();
+        document.getElementById('shuffle-btn').addEventListener('click', shuffle);
+    })();
+    </script>
 
     {% else %}
     <section class="videos-setup">
@@ -75,8 +203,8 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
 <section class="videos-subscribe">
     <div class="container">
         <h5>Subscribe for weekly episodes</h5>
-        <a href="https://www.youtube.com/@saturdaymp?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Subscribe on YouTube
+        <a href="https://www.youtube.com/@saturdaymp?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Subscribe
         </a>
     </div>
 </section>
