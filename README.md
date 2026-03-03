@@ -98,6 +98,24 @@ The site displays videos from The SaturdayMP Show YouTube channel. A GitHub Acti
 
 The workflow runs automatically every Sunday at midnight UTC, creating a PR that auto-merges when checks pass. When the PR is merged, the Jekyll deployment workflow is triggered to rebuild and deploy the site with the new videos.
 
+### How It Works
+
+The fetch script (`scripts/fetch-youtube-videos.sh`) does the following:
+
+1. **Fetches video metadata** from the YouTube PlaylistItems API (paginated)
+2. **Fetches view counts** from the YouTube Videos API (batched by 50)
+3. **Downloads thumbnails** to `assets/images/youtube-thumbnails/` as `<video-id>.jpg`. Existing thumbnails are only re-downloaded if the remote file is newer (using `curl -z`).
+4. **Saves video data** to `_data/youtube_videos.json` with local thumbnail paths
+
+### Videos Page
+
+The videos page (`pages/videos.html`) displays:
+
+- **Latest Episode**: Featured video with embedded player
+- **Recent Episodes**: The next 3 most recent videos
+- **Most Popular**: Top 3 videos by view count
+- **Discover Something New**: 3 randomly selected videos with a Shuffle button to pick new ones (client-side randomization with fade animation)
+
 ### Manual Testing
 
 You can test the fetch script locally:
