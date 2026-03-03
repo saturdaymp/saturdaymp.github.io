@@ -167,8 +167,8 @@ echo "Downloading thumbnails..."
 
 new_count=0
 existing_count=0
-for vid_id in $all_ids; do
-    thumb_url=$(echo "$all_videos" | jq -r --arg id "$vid_id" '.[] | select(.id == $id) | .thumbnail')
+thumb_map=$(echo "$all_videos" | jq -r '.[] | "\(.id)\t\(.thumbnail)"')
+while IFS=$'\t' read -r vid_id thumb_url; do
     thumb_file="${THUMBNAIL_DIR}/${vid_id}.jpg"
     if [ -n "$thumb_url" ] && [ "$thumb_url" != "null" ]; then
         if [ -f "$thumb_file" ]; then
@@ -180,7 +180,7 @@ for vid_id in $all_ids; do
             new_count=$((new_count + 1))
         fi
     fi
-done
+done <<< "$thumb_map"
 echo "Thumbnails: $new_count new, $existing_count checked for updates"
 
 # -----------------------------------------------------------
