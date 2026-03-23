@@ -46,7 +46,7 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="videos-card">
                         <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
-                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail" loading="lazy">
                             <div class="videos-card-overlay">
                                 <span class="videos-play-icon">&#9658;</span>
                             </div>
@@ -70,7 +70,7 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="videos-card">
                         <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
-                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail" loading="lazy">
                             <div class="videos-card-overlay">
                                 <span class="videos-play-icon">&#9658;</span>
                             </div>
@@ -84,7 +84,7 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
         </div>
     </section>
 
-    <!-- Random Videos (rendered by Liquid, picked client-side on each page load) -->
+    <!-- Random Videos (data-driven, only 3 images loaded at a time) -->
     <section class="videos-grid-section videos-random">
         <div class="container">
             <div class="text-center mb-3">
@@ -92,65 +92,73 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
                 <button id="shuffle-btn" class="btn btn-primary btn-lg" type="button">Shuffle</button>
             </div>
             <div class="row" id="random-videos">
-                {% for video in site.data.youtube_videos %}
-                {% if video.id != latest_video.id %}
-                <div class="col-md-6 col-lg-4 mb-4 random-candidate" style="display: none;">
-                    <div class="videos-card">
-                        <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener noreferrer" class="videos-card-link">
-                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}" class="videos-card-thumbnail">
-                            <div class="videos-card-overlay">
-                                <span class="videos-play-icon">&#9658;</span>
-                            </div>
-                        </a>
-                        <h4 class="videos-card-title">{{ video.title }}</h4>
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
             </div>
         </div>
     </section>
 
     <script>
     (function() {
-        var cards = Array.from(document.querySelectorAll('.random-candidate'));
-        var count = Math.min(3, cards.length);
+        var allVideos = [
+            {% for video in site.data.youtube_videos %}{% if video.id != latest_video.id %}{
+                "id": {{ video.id | jsonify }},
+                "title": {{ video.title | jsonify }},
+                "thumbnail": {{ video.thumbnail | jsonify }}
+            }{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}
+        ];
 
-        var shuffling = false;
         var container = document.getElementById('random-videos');
+        var count = Math.min(3, allVideos.length);
+        var shuffling = false;
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function createCard(video) {
+            var col = document.createElement('div');
+            col.className = 'col-md-6 col-lg-4 mb-4 random-candidate fade-out';
+
+            col.innerHTML =
+                '<div class="videos-card">' +
+                    '<a href="https://www.youtube.com/watch?v=' + encodeURIComponent(video.id) + '" target="_blank" rel="noopener noreferrer" class="videos-card-link">' +
+                        '<img src="' + escapeHtml(video.thumbnail) + '" alt="' + escapeHtml(video.title) + '" class="videos-card-thumbnail" loading="lazy">' +
+                        '<div class="videos-card-overlay">' +
+                            '<span class="videos-play-icon">&#9658;</span>' +
+                        '</div>' +
+                    '</a>' +
+                    '<h4 class="videos-card-title">' + escapeHtml(video.title) + '</h4>' +
+                '</div>';
+
+            return col;
+        }
 
         function pickNew() {
             // Lock the container height to prevent layout shift
             container.style.minHeight = container.offsetHeight + 'px';
 
-            // Pick 3 random by partial shuffle
+            // Pick random videos by partial shuffle
             for (var i = 0; i < count; i++) {
-                var j = i + Math.floor(Math.random() * (cards.length - i));
-                var temp = cards[i];
-                cards[i] = cards[j];
-                cards[j] = temp;
+                var j = i + Math.floor(Math.random() * (allVideos.length - i));
+                var temp = allVideos[i];
+                allVideos[i] = allVideos[j];
+                allVideos[j] = temp;
             }
 
-            // Hide all cards
-            for (var i = 0; i < cards.length; i++) {
-                cards[i].style.display = 'none';
-                cards[i].classList.remove('fade-out');
-            }
-
-            // Show picked cards starting faded out
+            // Replace container contents with new cards
+            container.innerHTML = '';
+            var cards = [];
             for (var i = 0; i < count; i++) {
-                cards[i].classList.add('fade-out');
-                cards[i].style.display = '';
+                var card = createCard(allVideos[i]);
+                container.appendChild(card);
+                cards.push(card);
             }
 
-            // Use requestAnimationFrame to ensure the browser paints the
-            // faded-out state before we remove the class to trigger fade-in
+            // Fade in the new cards
             requestAnimationFrame(function() {
                 requestAnimationFrame(function() {
-                    for (var i = 0; i < count; i++) {
+                    for (var i = 0; i < cards.length; i++) {
                         cards[i].classList.remove('fade-out');
                     }
-                    // Release the height lock after fade-in completes
                     setTimeout(function() {
                         container.style.minHeight = '';
                         shuffling = false;
@@ -163,8 +171,7 @@ description: Watch the latest episodes of The SaturdayMP Show - programming tuto
             if (shuffling) return;
             shuffling = true;
 
-            // Find visible cards and fade them out
-            var visible = cards.filter(function(c) { return c.style.display !== 'none'; });
+            var visible = Array.from(container.querySelectorAll('.random-candidate'));
             if (visible.length === 0) {
                 pickNew();
                 return;
