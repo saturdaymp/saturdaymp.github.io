@@ -1,12 +1,21 @@
 [
   {
+    "id": "-tdfTH4vMug",
+    "title": "SaturdayMP Show 95: Passkeys Primer w/ Aaron Yong",
+    "description": "In this episode Aaron Yong gives an overview of Passkeys and why you should use them.  He also answers my naive questions about how they work.\n\nAaron runs Saikyo Softworks, a digital consultancy specializing in practical solutions for an ever-changing world.  In his spare time he also runs the local Edmonton (YEG) Ruby, Python, and JavaScript meetup.\n\nPasskeys IO:\nhttps://www.passkeys.io/\n\nDev Edmonton JavaScript, Python & Ruby Meetup\nhttps://devedmonton.com/meetups\n\nAaron Yong & Saikyo Softworks:\nhttps://www.linkedin.com/in/ajyong/\nhttps://www.linkedin.com/company/saikyo-softworks/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or interesting problem you want to see solved? Constructive feedback? Then comment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring: \nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching and special thanks to Aaron for his time and sharing with the community!\n\nRecorded: 2026-04-25",
+    "publishedAt": "2026-04-29T06:00:00Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/-tdfTH4vMug.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/-tdfTH4vMug/mqdefault.jpg",
+    "viewCount": 10
+  },
+  {
     "id": "D85HmPksOcs",
     "title": "SaturdayMP Show #94: Debugging Git HTTP 400 curl 22 Error",
     "description": "In our first ever completely live episode, Omar and myself debug a GitHub push error Omar was experiencing.  It was a new error for both of us and took a bit to figure out.  The error was:\n\nerror: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400\n\nThe tl;dw (to-long;didn't-watch) is the image was larger than the Git post buffer size.  The fix was to compress the image, which is something we are doing for the Weekly Dev Chat website.  Another fix is to increase the Git post buffer size.\n\nStackOverflow Answer:\nhttps://stackoverflow.com/questions/77856025/git-error-rpc-failed-http-400-curl-22-the-requested-url-returned-error-400-se\n\nWhat does Git HTTP Post Buffer Really Do?\nhttps://git-scm.com/docs/gitfaq/2.29.0#Documentation/gitfaq.txt-WhatdoeshttppostBufferreallydo\n\nWeekly Dev Chat:\nhttps://weeklydevchat.com/\n\nOmar: \nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or interesting problem you want to see solved? Constructive feedback? Then comment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring: \nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-04-21",
     "publishedAt": "2026-04-22T15:29:28Z",
     "thumbnail": "/assets/images/youtube-thumbnails/D85HmPksOcs.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/D85HmPksOcs/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 11
   },
   {
     "id": "FXUoAzcdtX4",
@@ -15,7 +24,7 @@
     "publishedAt": "2026-04-15T15:06:24Z",
     "thumbnail": "/assets/images/youtube-thumbnails/FXUoAzcdtX4.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/FXUoAzcdtX4/mqdefault.jpg",
-    "viewCount": 1
+    "viewCount": 4
   },
   {
     "id": "ppGwcLcgeNk",
@@ -24,7 +33,7 @@
     "publishedAt": "2026-04-08T06:00:40Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ppGwcLcgeNk.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ppGwcLcgeNk/mqdefault.jpg",
-    "viewCount": 11
+    "viewCount": 13
   },
   {
     "id": "vUVefXwB_VA",
@@ -150,7 +159,7 @@
     "publishedAt": "2026-01-07T07:00:42Z",
     "thumbnail": "/assets/images/youtube-thumbnails/lMT_l2QjNFc.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/lMT_l2QjNFc/mqdefault.jpg",
-    "viewCount": 15
+    "viewCount": 17
   },
   {
     "id": "1qmdQy2FgA4",
@@ -276,7 +285,7 @@
     "publishedAt": "2025-02-05T07:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/CzHv3uY2KiU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/CzHv3uY2KiU/mqdefault.jpg",
-    "viewCount": 93
+    "viewCount": 96
   },
   {
     "id": "AT8w2fsgzsA",
@@ -546,7 +555,7 @@
     "publishedAt": "2024-03-06T07:00:02Z",
     "thumbnail": "/assets/images/youtube-thumbnails/a7crfoMEhos.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/a7crfoMEhos/mqdefault.jpg",
-    "viewCount": 371
+    "viewCount": 372
   },
   {
     "id": "DeLc_yS-QAU",
@@ -636,7 +645,7 @@
     "publishedAt": "2023-12-26T17:51:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/uBnua-JZrec.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/uBnua-JZrec/mqdefault.jpg",
-    "viewCount": 298
+    "viewCount": 299
   },
   {
     "id": "05KtqwobX5Y",
@@ -735,7 +744,7 @@
     "publishedAt": "2023-10-11T02:09:30Z",
     "thumbnail": "/assets/images/youtube-thumbnails/gR4w9trH9pA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/gR4w9trH9pA/mqdefault.jpg",
-    "viewCount": 368
+    "viewCount": 371
   },
   {
     "id": "3EPNI5ge90g",
