@@ -29,15 +29,44 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: ./scripts/fetch-youtube-videos.sh
 
-      - name: Basic sanity check
+      - name: Validate fetched data
         run: |
-          # Quick check that we got valid JSON before committing
-          # Full validation happens in the PR check workflow (validate-youtube-data.yml)
           if ! jq empty _data/youtube_videos.json 2>/dev/null; then
-            echo "Error: Invalid JSON in youtube_videos.json"
+            echo "::error::Invalid JSON in youtube_videos.json"
             exit 1
           fi
-          echo "Basic check passed: $(jq 'length' _data/youtube_videos.json) videos fetched"
+
+          count=$(jq 'length' _data/youtube_videos.json)
+          if [ "$count" -eq 0 ]; then
+            echo "::error::No videos in youtube_videos.json"
+            exit 1
+          fi
+
+          missing=$(jq '[.[] | select(.id == null or .title == null or .thumbnail == null)] | length' _data/youtube_videos.json)
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing videos are missing required fields (id, title, or thumbnail)"
+            exit 1
+          fi
+
+          invalid_ids=$(jq '[.[] | select(.id | test("^[a-zA-Z0-9_-]{11}$") | not)] | length' _data/youtube_videos.json)
+          if [ "$invalid_ids" -gt 0 ]; then
+            echo "::error::$invalid_ids videos have invalid YouTube video IDs"
+            exit 1
+          fi
+
+          empty_titles=$(jq '[.[] | select(.title == "")] | length' _data/youtube_videos.json)
+          if [ "$empty_titles" -gt 0 ]; then
+            echo "::error::$empty_titles videos have empty titles"
+            exit 1
+          fi
+
+          invalid_views=$(jq '[.[] | select(.viewCount == null or (.viewCount | type) != "number" or .viewCount < 0)] | length' _data/youtube_videos.json)
+          if [ "$invalid_views" -gt 0 ]; then
+            echo "::error::$invalid_views videos have missing or invalid viewCount"
+            exit 1
+          fi
+
+          echo "Validated $count videos"
 
       - name: Commit changes
         id: auto-commit
@@ -49,13 +78,12 @@ jobs:
           file_pattern: "_data/youtube_videos.json assets/images/youtube-thumbnails/*"
           push_options: "--force"
 
-      - name: Create PR with Auto-merge
+      - name: Create and merge PR
         if: steps.auto-commit.outputs.changes_detected == 'true'
         env:
           GH_TOKEN: ${{ secrets.WEBSITE_DEPLOY_PAT }}
           BRANCH: ${{ env.BRANCH }}
         run: |
-          # Create PR if one doesn't exist
           if ! gh pr list --head "$BRANCH" --state open | grep -q .; then
             gh pr create \
               --title "Update YouTube videos data" \
@@ -64,7 +92,4 @@ jobs:
               --head "$BRANCH"
           fi
 
-          # Enable auto-merge (merge commit, not squash)
-          # Note: Auto-merge will wait for required status checks (validate-youtube-data.yml)
-          # Configure this in Settings > Branches > Branch protection rules
-          gh pr merge "$BRANCH" --auto --merge
+          gh pr merge "$BRANCH" --merge --delete-branch
