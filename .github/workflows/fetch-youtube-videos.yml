@@ -92,4 +92,4 @@ jobs:
               --head "$BRANCH"
           fi
 
-          gh pr merge "$BRANCH" --merge
+          gh pr merge "$BRANCH" --merge --delete-branch
