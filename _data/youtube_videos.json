@@ -1,12 +1,21 @@
 [
   {
+    "id": "LwfpJnPJP3w",
+    "title": "SaturdayMP Show #99: Custom Ping Client - Part 2",
+    "description": "In this live episode Omar and myself get the ping application working.  Not the best written C code, but it works, after I figured out we need to run the application as root.\n\nPing – Manually create and send ICMP/IP packets:\nhttps://inc0x0.com/icmp-ip-packets-ping-manually-create-and-send-icmp-ip-packets/\n\nWireshark:\nhttps://www.wireshark.org/\n\nOmar: \nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or interesting problem you want to see solved? Constructive feedback? Then comment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring: \nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-05-19",
+    "publishedAt": "2026-05-20T05:46:27Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/LwfpJnPJP3w.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/LwfpJnPJP3w/mqdefault.jpg",
+    "viewCount": 4
+  },
+  {
     "id": "Uv3LOT9b_sg",
-    "title": "SaturdayMP Show #98: Custom Ping Client",
+    "title": "SaturdayMP Show #98: Custom Ping Client - Part 1",
     "description": "In this live episode Omar and myself try to write a low-level C app that does a network ping.  Omar really wanted the app to be in C, so you get to watch me struggle to remember C syntax and translate bytes, chars, etc.\n\nWe do an OK job of explaining networking but a better job of explaining hex and how numbers are represented by bits (base 2) and bit shifting.\n\n1:17:55 - Hex and binary math\n1:33:17 - Bit shifting\n\nPing – Manually create and send ICMP/IP packets:\nhttps://inc0x0.com/icmp-ip-packets-ping-manually-create-and-send-icmp-ip-packets/\n\nWireshark:\nhttps://www.wireshark.org/\n\nOmar: \nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or interesting problem you want to see solved? Constructive feedback? Then comment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring: \nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-05-11",
     "publishedAt": "2026-05-12T06:57:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Uv3LOT9b_sg.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Uv3LOT9b_sg/mqdefault.jpg",
-    "viewCount": 17
+    "viewCount": 34
   },
   {
     "id": "uROgzj4Bwjk",
@@ -15,7 +24,7 @@
     "publishedAt": "2026-05-05T06:13:15Z",
     "thumbnail": "/assets/images/youtube-thumbnails/uROgzj4Bwjk.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/uROgzj4Bwjk/mqdefault.jpg",
-    "viewCount": 9
+    "viewCount": 11
   },
   {
     "id": "yhvIAbMxbS0",
@@ -33,7 +42,7 @@
     "publishedAt": "2026-04-29T06:00:00Z",
     "thumbnail": "/assets/images/youtube-thumbnails/-tdfTH4vMug.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/-tdfTH4vMug/mqdefault.jpg",
-    "viewCount": 11
+    "viewCount": 12
   },
   {
     "id": "D85HmPksOcs",
@@ -42,7 +51,7 @@
     "publishedAt": "2026-04-22T15:29:28Z",
     "thumbnail": "/assets/images/youtube-thumbnails/D85HmPksOcs.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/D85HmPksOcs/mqdefault.jpg",
-    "viewCount": 11
+    "viewCount": 12
   },
   {
     "id": "FXUoAzcdtX4",
@@ -159,7 +168,7 @@
     "publishedAt": "2026-01-28T07:00:00Z",
     "thumbnail": "/assets/images/youtube-thumbnails/1QtsLWfrNQQ.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/1QtsLWfrNQQ/mqdefault.jpg",
-    "viewCount": 9
+    "viewCount": 10
   },
   {
     "id": "X09Kiow2RsI",
@@ -213,7 +222,7 @@
     "publishedAt": "2025-12-03T07:00:06Z",
     "thumbnail": "/assets/images/youtube-thumbnails/7EN_NzzzRnM.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/7EN_NzzzRnM/mqdefault.jpg",
-    "viewCount": 9
+    "viewCount": 11
   },
   {
     "id": "M6CMolFPnGs",
@@ -240,7 +249,7 @@
     "publishedAt": "2025-11-05T07:00:35Z",
     "thumbnail": "/assets/images/youtube-thumbnails/bR1E1FdoTSM.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/bR1E1FdoTSM/mqdefault.jpg",
-    "viewCount": 1
+    "viewCount": 2
   },
   {
     "id": "eRCGlsGHNNM",
@@ -276,7 +285,7 @@
     "publishedAt": "2025-10-08T06:00:24Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ShVTQ1wLTsI.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ShVTQ1wLTsI/mqdefault.jpg",
-    "viewCount": 15
+    "viewCount": 16
   },
   {
     "id": "K2ddgnMDTFk",
@@ -672,7 +681,7 @@
     "publishedAt": "2023-12-26T17:51:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/uBnua-JZrec.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/uBnua-JZrec/mqdefault.jpg",
-    "viewCount": 300
+    "viewCount": 301
   },
   {
     "id": "05KtqwobX5Y",
