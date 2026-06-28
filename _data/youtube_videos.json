@@ -1,12 +1,21 @@
 [
   {
+    "id": "ZbICRF3bQbA",
+    "title": "SaturdayMP Show 104: picoCTF (Small Trouble & Droids 4)",
+    "description": "In this episode I (Chris), sorry no Omar, attempt some picoCTF (now CyLab) challenges.  I picked the challenges randomly and ended up with a RSA (Small Trouble) and reverse engineering APK binary (Droids 4).  Used the clanker (coding agent) to help with the APK challenge as I didn't have a way to run the apk on my machine.  \n\nIt was interesting to watch the clanker parse out the .so file.  Have you used a clanker for cyber security?  If so, what are your thoughts?\n\nCyLab:\nhttps://cylabacademy.org/\n\nWrite-up of solutions:\nhttps://github.com/mrbiggred/picoctf\n\nRSA Decoder:\nhttps://www.dcode.fr/rsa-cipher\n\nOmar:\nhttps://www.ashour.ca/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nWe usually record live every Monday around 10:00am-ish MDT and would love for you to join us.  Have a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-06-26\n\nP.S. - Thumbnail created by the YouTube Get Suggestions AI. It actually generated 3 images but I just picked the first one.  Good, bad, ugly?  I also found the YouTube clanker logic interesting:\n\n---\nThis concept follows the channel's established style by using the signature faceless red-haired technician and two-tiered branding while clearly signaling a walkthrough of the specific CTF challenges mentioned in the title.\n\nWhy it works\n\nThis thumbnail works by leveraging the high-intent nature of CTF tutorials. The clear visual proof of a \"solved\" terminal screen, combined with a literal arrow pointing to the answer, creates a strong hook for viewers specifically looking for help with these challenges. It maintains perfect brand consistency with your existing content through the standardized lower-third graphics and character design, ensuring long-term channel recognition.\n---",
+    "publishedAt": "2026-06-23T06:45:54Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/ZbICRF3bQbA.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/ZbICRF3bQbA/mqdefault.jpg",
+    "viewCount": 7
+  },
+  {
     "id": "tC3X3xE3n0g",
     "title": "SaturdayMP Show 103: HTTP Server in C (Part 1 - Listen is Working)",
     "description": "In this episode we start writing a custom HTTP Server in C because Omar wanted to learn more about HTTP, servers, and low-level networking.  We get a simple app that listens on a port and writes out to the command line what was sent to it.  We also have a good discussion about C strings at 1:08:53.\n\nPart 2, if it happens, we will add an HTTP response.  We are not very consistent.\n\nWeb Server in C GitHub repo:\nhttps://github.com/saturdaymp-examples/web-server-in-c\n\nHow I Built a Simple HTTP Server from Scratch using C:\nhttps://dev.to/jeffreythecoder/how-i-built-a-simple-http-server-from-scratch-using-c-739\n\nOmar:\nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nWe usually record live every Monday around 10:00am-ish MDT and would love for you to join us.  Have a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-06-15",
     "publishedAt": "2026-06-16T06:04:37Z",
     "thumbnail": "/assets/images/youtube-thumbnails/tC3X3xE3n0g.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/tC3X3xE3n0g/mqdefault.jpg",
-    "viewCount": 5
+    "viewCount": 6
   },
   {
     "id": "zsAPbkZS9sA",
@@ -357,7 +366,7 @@
     "publishedAt": "2025-02-05T07:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/CzHv3uY2KiU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/CzHv3uY2KiU/mqdefault.jpg",
-    "viewCount": 100
+    "viewCount": 103
   },
   {
     "id": "AT8w2fsgzsA",
@@ -789,7 +798,7 @@
     "publishedAt": "2023-11-01T21:27:23Z",
     "thumbnail": "/assets/images/youtube-thumbnails/mSG0Fj-qwyY.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/mSG0Fj-qwyY/mqdefault.jpg",
-    "viewCount": 190
+    "viewCount": 191
   },
   {
     "id": "U8YmtsiNjyA",
@@ -924,7 +933,7 @@
     "publishedAt": "2023-06-24T06:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/WiQFsJ0La9M.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/WiQFsJ0La9M/mqdefault.jpg",
-    "viewCount": 97
+    "viewCount": 98
   },
   {
     "id": "nIlgI5yoB5k",
