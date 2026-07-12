@@ -1,12 +1,21 @@
 [
   {
+    "id": "OVzqKNAsjgQ",
+    "title": "SaturdayMP Show 106: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 2)",
+    "description": "This is part 2 of the migrating the Noise from the Basement (NFTB) blog from @WordPress to @cloudflare.  Last episode I got it working on my local machine, and this episode I get the site deployed to Cloudflare using @GitHub actions.\n\nI'm on vacation next week, so part 3 will either be in 2 weeks or pre-recorded.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nHugo:\nhttps://gohugo.io/\n\nWordPress:\nhttps://wordpress.org/\n\nWPEngine:\nhttps://wpengine.com/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nWe usually record live every Monday around 10:00am-ish MDT and would love for you to join us.  Have a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-07-06\n\nP.S. - I used YouTube Get Suggestions AI to create the thumbnail.  At least this time it gave me a less laughable face.",
+    "publishedAt": "2026-07-07T07:03:49Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/OVzqKNAsjgQ.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/OVzqKNAsjgQ/mqdefault.jpg",
+    "viewCount": 7
+  },
+  {
     "id": "pn54cEn30qs",
     "title": "SaturdayMP Show 105: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 1)",
-    "description": "In this episode I (Chris), start migrating my blog from a @WordPress site, hosted on @WPEngine, to a static website using Hugo and hosted on @cloudflare. I was able to export my existing site and get Hugo to generate the site on development before running out of time.\n\nIn part 2 I'll continue the process.  Assuming I don't just finish it off screen.\n\nHugo:\nhttps://gohugo.io/\n\nWordPress:\nhttps://wordpress.org/\n\nWPEngine:\nhttps://wpengine.com/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nWe usually record live every Monday around 10:00am-ish MDT and would love for you to join us.  Have a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-06-29\n\nP.S. - I used YouTube Get Suggestions AI to create the thumbnail, and once again it created several.  I picked the one that put a \"funny\" face on my caricature as it made me laugh out loud.  What do you think?",
+    "description": "In this episode I (Chris), start migrating my blog from a @WordPress site, hosted on @WPEngine, to a static website using Hugo and hosted on @cloudflare. I was able to export my existing site and get Hugo to generate the site on development before running out of time.\n\nIn part 2 I'll continue the process.  Assuming I don't just finish it off screen.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nHugo:\nhttps://gohugo.io/\n\nWordPress:\nhttps://wordpress.org/\n\nWPEngine:\nhttps://wpengine.com/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nWe usually record live every Monday around 10:00am-ish MDT and would love for you to join us.  Have a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-06-29\n\nP.S. - I used YouTube Get Suggestions AI to create the thumbnail, and once again it created several.  I picked the one that put a \"funny\" face on my caricature as it made me laugh out loud.  What do you think?",
     "publishedAt": "2026-06-30T05:57:16Z",
     "thumbnail": "/assets/images/youtube-thumbnails/pn54cEn30qs.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/pn54cEn30qs/mqdefault.jpg",
-    "viewCount": 8
+    "viewCount": 13
   },
   {
     "id": "ZbICRF3bQbA",
@@ -15,7 +24,7 @@
     "publishedAt": "2026-06-23T06:45:54Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ZbICRF3bQbA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ZbICRF3bQbA/mqdefault.jpg",
-    "viewCount": 11
+    "viewCount": 13
   },
   {
     "id": "tC3X3xE3n0g",
@@ -24,7 +33,7 @@
     "publishedAt": "2026-06-16T06:04:37Z",
     "thumbnail": "/assets/images/youtube-thumbnails/tC3X3xE3n0g.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/tC3X3xE3n0g/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 7
   },
   {
     "id": "zsAPbkZS9sA",
@@ -33,7 +42,7 @@
     "publishedAt": "2026-06-09T06:18:03Z",
     "thumbnail": "/assets/images/youtube-thumbnails/zsAPbkZS9sA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/zsAPbkZS9sA/mqdefault.jpg",
-    "viewCount": 7
+    "viewCount": 8
   },
   {
     "id": "Xm0E2Ut70j0",
@@ -42,7 +51,7 @@
     "publishedAt": "2026-06-02T07:45:47Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Xm0E2Ut70j0.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Xm0E2Ut70j0/mqdefault.jpg",
-    "viewCount": 8
+    "viewCount": 10
   },
   {
     "id": "wMCDeNvKe_M",
@@ -123,7 +132,7 @@
     "publishedAt": "2026-04-08T06:00:40Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ppGwcLcgeNk.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ppGwcLcgeNk/mqdefault.jpg",
-    "viewCount": 14
+    "viewCount": 17
   },
   {
     "id": "vUVefXwB_VA",
@@ -132,7 +141,7 @@
     "publishedAt": "2026-04-01T06:00:35Z",
     "thumbnail": "/assets/images/youtube-thumbnails/vUVefXwB_VA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/vUVefXwB_VA/mqdefault.jpg",
-    "viewCount": 0
+    "viewCount": 1
   },
   {
     "id": "XluFDcfPqNA",
@@ -213,7 +222,7 @@
     "publishedAt": "2026-02-04T07:00:39Z",
     "thumbnail": "/assets/images/youtube-thumbnails/jvj9GxPCYSo.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/jvj9GxPCYSo/mqdefault.jpg",
-    "viewCount": 16
+    "viewCount": 17
   },
   {
     "id": "1QtsLWfrNQQ",
@@ -339,7 +348,7 @@
     "publishedAt": "2025-10-08T06:00:24Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ShVTQ1wLTsI.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ShVTQ1wLTsI/mqdefault.jpg",
-    "viewCount": 16
+    "viewCount": 17
   },
   {
     "id": "K2ddgnMDTFk",
@@ -375,7 +384,7 @@
     "publishedAt": "2025-02-05T07:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/CzHv3uY2KiU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/CzHv3uY2KiU/mqdefault.jpg",
-    "viewCount": 104
+    "viewCount": 107
   },
   {
     "id": "AT8w2fsgzsA",
@@ -735,7 +744,7 @@
     "publishedAt": "2023-12-26T17:51:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/uBnua-JZrec.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/uBnua-JZrec/mqdefault.jpg",
-    "viewCount": 305
+    "viewCount": 306
   },
   {
     "id": "05KtqwobX5Y",
@@ -834,7 +843,7 @@
     "publishedAt": "2023-10-11T02:09:30Z",
     "thumbnail": "/assets/images/youtube-thumbnails/gR4w9trH9pA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/gR4w9trH9pA/mqdefault.jpg",
-    "viewCount": 376
+    "viewCount": 377
   },
   {
     "id": "3EPNI5ge90g",
@@ -942,7 +951,7 @@
     "publishedAt": "2023-06-24T06:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/WiQFsJ0La9M.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/WiQFsJ0La9M/mqdefault.jpg",
-    "viewCount": 98
+    "viewCount": 99
   },
   {
     "id": "nIlgI5yoB5k",
