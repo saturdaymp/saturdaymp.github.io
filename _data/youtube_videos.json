@@ -1,12 +1,21 @@
 [
   {
+    "id": "VSwCr3GTlLk",
+    "title": "SaturdayMP Show 107: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 3)",
+    "description": "This is part 3 of the migrating the Noise from the Basement (NFTB) blog from @WordPress to  @cloudflare.  In this episode I experiment with different Hugo themes, pick one I like, and customize it.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nHugo:\nhttps://gohugo.io/\n\nHugo Themes:\nhttps://themes.gohugo.io/\n\nBeautiful Hugo Theme:\nhttps://github.com/halogenica/beautifulhugo\n\nWordPress:\nhttps://wordpress.org/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-07-20\n\nP.S. – Since this wasn't recorded live, I reverted to my hand-made thumbnail.  Does it look better or worse than the AI-generated ones?",
+    "publishedAt": "2026-07-23T17:27:30Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/VSwCr3GTlLk.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/VSwCr3GTlLk/mqdefault.jpg",
+    "viewCount": 2
+  },
+  {
     "id": "OVzqKNAsjgQ",
     "title": "SaturdayMP Show 106: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 2)",
     "description": "This is part 2 of the migrating the Noise from the Basement (NFTB) blog from @WordPress to @cloudflare.  Last episode I got it working on my local machine, and this episode I get the site deployed to Cloudflare using @GitHub actions.\n\nI'm on vacation next week, so part 3 will either be in 2 weeks or pre-recorded.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nHugo:\nhttps://gohugo.io/\n\nWordPress:\nhttps://wordpress.org/\n\nWPEngine:\nhttps://wpengine.com/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nWe usually record live every Monday around 10:00am-ish MDT and would love for you to join us.  Have a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-07-06\n\nP.S. - I used YouTube Get Suggestions AI to create the thumbnail.  At least this time it gave me a less laughable face.",
     "publishedAt": "2026-07-07T07:03:49Z",
     "thumbnail": "/assets/images/youtube-thumbnails/OVzqKNAsjgQ.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/OVzqKNAsjgQ/mqdefault.jpg",
-    "viewCount": 8
+    "viewCount": 9
   },
   {
     "id": "pn54cEn30qs",
@@ -15,7 +24,7 @@
     "publishedAt": "2026-06-30T05:57:16Z",
     "thumbnail": "/assets/images/youtube-thumbnails/pn54cEn30qs.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/pn54cEn30qs/mqdefault.jpg",
-    "viewCount": 13
+    "viewCount": 14
   },
   {
     "id": "ZbICRF3bQbA",
@@ -24,7 +33,7 @@
     "publishedAt": "2026-06-23T06:45:54Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ZbICRF3bQbA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ZbICRF3bQbA/mqdefault.jpg",
-    "viewCount": 15
+    "viewCount": 18
   },
   {
     "id": "tC3X3xE3n0g",
@@ -384,7 +393,7 @@
     "publishedAt": "2025-02-05T07:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/CzHv3uY2KiU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/CzHv3uY2KiU/mqdefault.jpg",
-    "viewCount": 107
+    "viewCount": 108
   },
   {
     "id": "AT8w2fsgzsA",
