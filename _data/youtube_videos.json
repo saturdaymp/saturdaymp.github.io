@@ -1,12 +1,21 @@
 [
   {
+    "id": "FPMmJGaIFm4",
+    "title": "SaturdayMP Show 108: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 4)",
+    "description": "In this episode I add fix a couple minor issues with the ported blog and then try to point the DNS records at the new blog.  Spoiler: updating the DNS records fails, but I don't figure out why in this video.  Future me knows why, and it's already recorded for part 5.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nHugo:\nhttps://gohugo.io/\n\nWordPress:\nhttps://wordpress.org/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nEasyDNS:\nhttps://easydns.com/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-07-27",
+    "publishedAt": "2026-07-28T14:27:06Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/FPMmJGaIFm4.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/FPMmJGaIFm4/mqdefault.jpg",
+    "viewCount": 1
+  },
+  {
     "id": "VSwCr3GTlLk",
     "title": "SaturdayMP Show 107: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 3)",
     "description": "This is part 3 of the migrating the Noise from the Basement (NFTB) blog from @WordPress to  @cloudflare.  In this episode I experiment with different Hugo themes, pick one I like, and customize it.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nHugo:\nhttps://gohugo.io/\n\nHugo Themes:\nhttps://themes.gohugo.io/\n\nBeautiful Hugo Theme:\nhttps://github.com/halogenica/beautifulhugo\n\nWordPress:\nhttps://wordpress.org/\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nSaturdayMP (Chris):\nhttps://saturdaymp.com/\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-07-20\n\nP.S. – Since this wasn't recorded live, I reverted to my hand-made thumbnail.  Does it look better or worse than the AI-generated ones?",
     "publishedAt": "2026-07-23T17:27:30Z",
     "thumbnail": "/assets/images/youtube-thumbnails/VSwCr3GTlLk.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/VSwCr3GTlLk/mqdefault.jpg",
-    "viewCount": 2
+    "viewCount": 4
   },
   {
     "id": "OVzqKNAsjgQ",
@@ -33,7 +42,7 @@
     "publishedAt": "2026-06-23T06:45:54Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ZbICRF3bQbA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ZbICRF3bQbA/mqdefault.jpg",
-    "viewCount": 18
+    "viewCount": 23
   },
   {
     "id": "tC3X3xE3n0g",
@@ -654,7 +663,7 @@
     "publishedAt": "2024-03-13T14:51:32Z",
     "thumbnail": "/assets/images/youtube-thumbnails/sj_UvIzkMHY.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/sj_UvIzkMHY/mqdefault.jpg",
-    "viewCount": 82
+    "viewCount": 83
   },
   {
     "id": "a7crfoMEhos",
@@ -753,7 +762,7 @@
     "publishedAt": "2023-12-26T17:51:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/uBnua-JZrec.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/uBnua-JZrec/mqdefault.jpg",
-    "viewCount": 306
+    "viewCount": 307
   },
   {
     "id": "05KtqwobX5Y",
