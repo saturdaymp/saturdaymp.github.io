@@ -1,12 +1,21 @@
 [
   {
+    "id": "LHdpVj29z6w",
+    "title": "SaturdayMP Show 111: CyLab - Vault Door 6 & Scavenger Hunt",
+    "description": "In this episode I solve two CyLab, previously @picoCTF, challenges: Vault Door 6 and Scavenger Hunt.  Vault Door 6 involves bit masking using XOR, and Scavenger Hunt is a fun little hunt for parts of the flag in various website files.\n\nCyLab Security Academy (previously picoCTF):\nhttps://cylabacademy.org/\n\nCyber Chef:\nhttps://gchq.github.io/CyberChef/\n\nGitHub Repo:\nhttps://github.com/mrbiggred/picoCTF\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-08-17",
+    "publishedAt": "2026-08-18T15:17:48Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/LHdpVj29z6w.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/LHdpVj29z6w/mqdefault.jpg",
+    "viewCount": 0
+  },
+  {
     "id": "Lu7izJ8a4rk",
     "title": "SaturdayMP Show 110: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 6)",
     "description": "The final episode of the series.  I get the Noise from the Basement (NFTB) DNS working by setting nameservers to @cloudflare but keeping EasyDNS as my registrar.  As I write this, everything is working, including my email.  I'll have to check if this is true in 24 hours.\n\nDo you have thoughts about hosting static sites on Cloudflare and/or using Hugo?  Any improvements I should make?  Let me know.\n\nMigration Playlist:\nhttps://www.youtube.com/playlist?list=PLOaCY0HmoDNU\n\nCloudflare Pages & Workers Compatibility Matrix:\nhttps://developers.cloudflare.com/workers/static-assets/migration-guides/migrate-from-pages/#compatibility-matrix\n\nCloudflare:\nhttps://www.cloudflare.com/\n\nEasyDNS:\nhttps://easydns.com/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email to ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-08-11",
     "publishedAt": "2026-08-11T23:16:25Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Lu7izJ8a4rk.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Lu7izJ8a4rk/mqdefault.jpg",
-    "viewCount": 1
+    "viewCount": 4
   },
   {
     "id": "Dd1I0IXKpVU",
@@ -15,7 +24,7 @@
     "publishedAt": "2026-08-06T18:11:59Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Dd1I0IXKpVU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Dd1I0IXKpVU/mqdefault.jpg",
-    "viewCount": 4
+    "viewCount": 9
   },
   {
     "id": "FPMmJGaIFm4",
@@ -24,7 +33,7 @@
     "publishedAt": "2026-07-28T14:27:06Z",
     "thumbnail": "/assets/images/youtube-thumbnails/FPMmJGaIFm4.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/FPMmJGaIFm4/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 16
   },
   {
     "id": "VSwCr3GTlLk",
@@ -42,7 +51,7 @@
     "publishedAt": "2026-07-07T07:03:49Z",
     "thumbnail": "/assets/images/youtube-thumbnails/OVzqKNAsjgQ.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/OVzqKNAsjgQ/mqdefault.jpg",
-    "viewCount": 9
+    "viewCount": 10
   },
   {
     "id": "pn54cEn30qs",
@@ -60,7 +69,7 @@
     "publishedAt": "2026-06-23T06:45:54Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ZbICRF3bQbA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ZbICRF3bQbA/mqdefault.jpg",
-    "viewCount": 27
+    "viewCount": 30
   },
   {
     "id": "tC3X3xE3n0g",
@@ -69,7 +78,7 @@
     "publishedAt": "2026-06-16T06:04:37Z",
     "thumbnail": "/assets/images/youtube-thumbnails/tC3X3xE3n0g.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/tC3X3xE3n0g/mqdefault.jpg",
-    "viewCount": 7
+    "viewCount": 9
   },
   {
     "id": "zsAPbkZS9sA",
@@ -240,7 +249,7 @@
     "publishedAt": "2026-02-18T13:17:44Z",
     "thumbnail": "/assets/images/youtube-thumbnails/F-a39bQmylc.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/F-a39bQmylc/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 7
   },
   {
     "id": "0K_GY4rvr48",
@@ -276,7 +285,7 @@
     "publishedAt": "2026-01-21T15:21:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/X09Kiow2RsI.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/X09Kiow2RsI/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 7
   },
   {
     "id": "UwfyyYPsOwo",
@@ -312,7 +321,7 @@
     "publishedAt": "2025-12-10T22:28:07Z",
     "thumbnail": "/assets/images/youtube-thumbnails/FCAHNP9kJ3U.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/FCAHNP9kJ3U/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 7
   },
   {
     "id": "7EN_NzzzRnM",
@@ -402,7 +411,7 @@
     "publishedAt": "2025-04-09T06:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/IiJC2aLvGkA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/IiJC2aLvGkA/mqdefault.jpg",
-    "viewCount": 21
+    "viewCount": 22
   },
   {
     "id": "3dNMOff-Gp0",
@@ -429,7 +438,7 @@
     "publishedAt": "2025-01-29T15:46:57Z",
     "thumbnail": "/assets/images/youtube-thumbnails/AT8w2fsgzsA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/AT8w2fsgzsA/mqdefault.jpg",
-    "viewCount": 196
+    "viewCount": 198
   },
   {
     "id": "jOh7NLj7BxI",
@@ -474,7 +483,7 @@
     "publishedAt": "2024-12-04T07:00:16Z",
     "thumbnail": "/assets/images/youtube-thumbnails/c6_i8HRNf8o.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/c6_i8HRNf8o/mqdefault.jpg",
-    "viewCount": 91
+    "viewCount": 92
   },
   {
     "id": "ga99fYkwVJA",
@@ -798,7 +807,7 @@
     "publishedAt": "2023-12-15T03:03:54Z",
     "thumbnail": "/assets/images/youtube-thumbnails/IL6jnyoLwYw.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/IL6jnyoLwYw/mqdefault.jpg",
-    "viewCount": 22
+    "viewCount": 23
   },
   {
     "id": "i0W_3Q55gro",
@@ -879,7 +888,7 @@
     "publishedAt": "2023-10-11T02:09:30Z",
     "thumbnail": "/assets/images/youtube-thumbnails/gR4w9trH9pA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/gR4w9trH9pA/mqdefault.jpg",
-    "viewCount": 377
+    "viewCount": 378
   },
   {
     "id": "3EPNI5ge90g",
@@ -969,7 +978,7 @@
     "publishedAt": "2023-07-06T23:02:49Z",
     "thumbnail": "/assets/images/youtube-thumbnails/IbNpsEMtqLc.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/IbNpsEMtqLc/mqdefault.jpg",
-    "viewCount": 9
+    "viewCount": 10
   },
   {
     "id": "io5HwCsFclQ",
