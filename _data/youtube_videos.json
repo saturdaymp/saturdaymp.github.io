@@ -1,12 +1,21 @@
 [
   {
+    "id": "ryKok4iuH4o",
+    "title": "SaturdayMP Show 112: 7 Billion Humans - Part 1",
+    "description": "7 Billion Humans is the successor to Human Resource Machine by Tomorrow Corporation (@KyleGabler).  Where Human Resource Machine is about assembly programming, 7 Billion Humans is about parallel processing.  In this episode I go through the tutorial and solve a few puzzles.  Then I go back to a tutorial puzzle and fail to optimize the number of steps.  Do you know how to optimize it?\n\n7 Billion Humans Playlist:\nhttps://www.youtube.com/playlist?list=PLI0ut1WsT25E\n\n7 Billion Humans:\nhttps://tomorrowcorporation.com/7billionhumans\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-08-26",
+    "publishedAt": "2026-08-26T15:38:37Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/ryKok4iuH4o.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/ryKok4iuH4o/mqdefault.jpg",
+    "viewCount": 2
+  },
+  {
     "id": "LHdpVj29z6w",
     "title": "SaturdayMP Show 111: CyLab - Vault Door 6 & Scavenger Hunt",
     "description": "In this episode I solve two CyLab, previously @picoCTF, challenges: Vault Door 6 and Scavenger Hunt.  Vault Door 6 involves bit masking using XOR, and Scavenger Hunt is a fun little hunt for parts of the flag in various website files.\n\nCyLab Security Academy (previously picoCTF):\nhttps://cylabacademy.org/\n\nCyber Chef:\nhttps://gchq.github.io/CyberChef/\n\nGitHub Repo:\nhttps://github.com/mrbiggred/picoCTF\n\nHave a question, constructive feedback, suggestion, and/or just want to say hi?  Then comment, send a direct message (DM), or email ask@saturdaymp.com.\n\nDid you find this video worth your time? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-08-17",
     "publishedAt": "2026-08-18T15:17:48Z",
     "thumbnail": "/assets/images/youtube-thumbnails/LHdpVj29z6w.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/LHdpVj29z6w/mqdefault.jpg",
-    "viewCount": 0
+    "viewCount": 6
   },
   {
     "id": "Lu7izJ8a4rk",
@@ -15,7 +24,7 @@
     "publishedAt": "2026-08-11T23:16:25Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Lu7izJ8a4rk.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Lu7izJ8a4rk/mqdefault.jpg",
-    "viewCount": 4
+    "viewCount": 11
   },
   {
     "id": "Dd1I0IXKpVU",
@@ -24,7 +33,7 @@
     "publishedAt": "2026-08-06T18:11:59Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Dd1I0IXKpVU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Dd1I0IXKpVU/mqdefault.jpg",
-    "viewCount": 9
+    "viewCount": 13
   },
   {
     "id": "FPMmJGaIFm4",
@@ -60,7 +69,7 @@
     "publishedAt": "2026-06-30T05:57:16Z",
     "thumbnail": "/assets/images/youtube-thumbnails/pn54cEn30qs.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/pn54cEn30qs/mqdefault.jpg",
-    "viewCount": 16
+    "viewCount": 17
   },
   {
     "id": "ZbICRF3bQbA",
@@ -303,7 +312,7 @@
     "publishedAt": "2026-01-07T07:00:42Z",
     "thumbnail": "/assets/images/youtube-thumbnails/lMT_l2QjNFc.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/lMT_l2QjNFc/mqdefault.jpg",
-    "viewCount": 17
+    "viewCount": 18
   },
   {
     "id": "1qmdQy2FgA4",
@@ -384,7 +393,7 @@
     "publishedAt": "2025-10-15T06:00:00Z",
     "thumbnail": "/assets/images/youtube-thumbnails/0s_3jVIttnc.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/0s_3jVIttnc/mqdefault.jpg",
-    "viewCount": 3
+    "viewCount": 4
   },
   {
     "id": "ShVTQ1wLTsI",
