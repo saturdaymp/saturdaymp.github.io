@@ -34,7 +34,7 @@ updates:
       time: "08:00"
       timezone: "America/Edmonton"
     open-pull-requests-limit: 5
-    labels: ["dependencies", "github-actions"]
+    labels: ["dependencies", "github_actions"]
     cooldown:
       semver-major-days: 7
       semver-minor-days: 3
