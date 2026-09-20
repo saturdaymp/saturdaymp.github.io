@@ -32,4 +32,5 @@ exclude:
   - README.md
   - CLAUDE.md
   - AGENTS.md
+  - SECURITY.md
   - scripts/
