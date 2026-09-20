@@ -35,10 +35,9 @@ updates:
       timezone: "America/Edmonton"
     open-pull-requests-limit: 5
     labels: ["dependencies", "github_actions"]
+    # github-actions supports only default-days, not the semver-* variants
     cooldown:
-      semver-major-days: 7
-      semver-minor-days: 3
-      semver-patch-days: 1
+      default-days: 3
     groups:
       actions:
         applies-to: version-updates
