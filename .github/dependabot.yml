@@ -1,20 +1,59 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# https://docs.github.com/code-security/dependabot/working-with-dependabot/dependabot-options-reference
 
 version: 2
 updates:
-  # Update Ruby dependencies
+  # Ruby dependencies (Gemfile / Gemfile.lock)
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "America/Edmonton"
     open-pull-requests-limit: 5
+    labels: ["dependencies", "ruby"]
+    cooldown:
+      semver-major-days: 7
+      semver-minor-days: 3
+      semver-patch-days: 1
+    groups:
+      bundler:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      bundler-security:
+        applies-to: security-updates
+        patterns: ["*"]
 
-  # Update GitHub Actions workflows
+  # GitHub Actions used by the workflows
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "America/Edmonton"
     open-pull-requests-limit: 5
+    labels: ["dependencies", "github_actions"]
+    # github-actions supports only default-days, not the semver-* variants
+    cooldown:
+      default-days: 3
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      actions-security:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  # Ruby image used for local development
+  - package-ecosystem: "docker-compose"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    labels: ["dependencies", "docker"]
+    # docker-compose supports only default-days, not the semver-* variants
+    cooldown:
+      default-days: 7
