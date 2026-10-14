@@ -138,15 +138,6 @@ You can test the fetch script locally:
 ```bash
 YOUTUBE_API_KEY=your_key ./scripts/fetch-youtube-videos.sh
 ```
-## Dependency Updates
-
-Dependabot is configured in `.github/dependabot.yml` to check for updates every Monday morning (Edmonton time) for:
-
-- **Bundler**: gems in `Gemfile` / `Gemfile.lock`
-- **GitHub Actions**: actions used by the workflows
-- **Docker**: the Ruby image used by `docker-compose.yml`
-
-Minor and patch updates are grouped into a single PR; security updates get their own.
 
 ## Security
 
