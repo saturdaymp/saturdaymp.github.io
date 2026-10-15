@@ -14,7 +14,7 @@ https://www.youtube.com/playlist?list=PLYPcrKbLqwutOPHv6zimONxErY7ke9tWn
 Saturday Morning Productions is a software development and consulting company based in Edmonton, Alberta, Canada. Since 2009, we've been helping people ship high-quality software faster.  Feel free to contact us if you are interested in our services or have any questions!
 
 **Contact Us:**
-- Email: [info@saturdaymp.com](mailto:info@saturdaymp.com)
+- Email: [support@saturdaymp.com](mailto:support@saturdaymp.com)
 - Website: [https://saturdaymp.com](https://saturdaymp.com)
 
 ## Running Locally
@@ -27,6 +27,8 @@ docker compose up app
 
 ### Manual Setup
 
+Requires Ruby 3.4 or newer. Docker uses Ruby 4.0 and the deployment workflow uses Ruby 3.4.
+
 ```bash
 bundle install
 bundle exec jekyll serve --livereload
@@ -35,6 +37,20 @@ bundle exec jekyll serve --livereload
 The site will be available at:
 - Website: [http://localhost:4000](http://localhost:4000)
 - LiveReload: Port 35729 (automatic browser refresh on file changes)
+
+## Project Structure
+
+```
+_data/          Site data files (YouTube video metadata)
+_includes/      Reusable HTML partials (header, footer, boxes, buttons)
+_layouts/       Page layouts (default.html)
+_plugins/       Custom Jekyll plugins for the Bootstrap gem integration
+_sass/          Per-page Sass partials
+assets/         CSS entry points, images, and vendored Bootstrap JS
+pages/          Site pages (home, about, contact, videos)
+scripts/        Helper scripts (YouTube video fetcher)
+.github/        GitHub Actions workflows and Dependabot configuration
+```
 
 ## Architecture
 
@@ -63,7 +79,6 @@ This website automatically deploys to GitHub Pages using GitHub Actions. The dep
 
 1. Changes are pushed or merged to the `main` branch
 2. Manual workflow dispatch from the Actions tab
-3. A YouTube videos update PR is merged into `main` (via `pull_request: closed` event)
 
 **Deployment Process:**
 1. **Build Job**: Sets up Ruby 3.4, installs dependencies via Bundler, and builds the Jekyll site
@@ -123,3 +138,15 @@ You can test the fetch script locally:
 ```bash
 YOUTUBE_API_KEY=your_key ./scripts/fetch-youtube-videos.sh
 ```
+
+## Security
+
+Found a security problem? Please don't open a public issue.  See [SECURITY.md](SECURITY.md) for how to report it privately, either through the repository's [Security tab](https://github.com/saturdaymp/saturdaymp.github.io/security) or by email.
+
+## Contributing
+
+Issues and pull requests are welcome.  See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get set up, what to check before opening a pull request, and the conventions this site follows.
+
+## License
+
+Released under the [MIT License](LICENSE).
