@@ -27,7 +27,7 @@ docker compose up app
 
 ### Manual Setup
 
-Requires Ruby 3.4 or newer. Docker uses Ruby 4.0 and the deployment workflow uses Ruby 3.4.
+Requires Ruby 3.4. Docker and the deployment workflow both use Ruby 3.4.
 
 ```bash
 bundle install
