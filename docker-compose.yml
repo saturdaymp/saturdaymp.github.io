@@ -1,6 +1,6 @@
 services:
   app:
-    image: ruby:4.0.0
+    image: ruby:3.4
     command: bundle exec jekyll serve --watch --force_polling --host 0.0.0.0 --livereload
     entrypoint: ["/app/docker-entrypoint.sh"]
     ports:
