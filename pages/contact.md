@@ -12,11 +12,11 @@ description: Get in touch with Saturday Morning Productions. We're located in Ed
     <div class="container">
         <h2 class="contactus-header">Contact us!</h2>
         <p class="contact-summary">
-        Saturday Morning Productions is located in the basement of our house in Edmonton, Alberta, Canada. Because we run our business out of our house, we don't publish our mailing address; but if you ask nicely we will tell you.
+        Saturday Morning Productions is located in the basement of our house in Edmonton, Alberta, Canada. Because we run our business out of our house, we don't publish our mailing address.
         </p>
         <div class="contact-btns">
-            <a href="tel:+1-780-886-3406" class="contact-btn btn btn-secondary btn-lg btn-block">1-780-886-3406</a>
-            <a href="mailto:info@saturdaymp.com" class="contact-btn btn btn-secondary btn-lg btn-block">Email</a>
+            <a href="tel:+1-780-886-3406" class="contact-btn btn btn-secondary btn-lg btn-block">Phone</a>
+            <a href="mailto:support@saturdaymp.com" class="contact-btn btn btn-secondary btn-lg btn-block">Email</a>
         </div>
     </div>
 </section>
@@ -37,8 +37,10 @@ description: Get in touch with Saturday Morning Productions. We're located in Ed
                 <div class="contact-email-box h-100">
                     <h5 class="contact-email-box-header">General Inquiries</h5>
                     <a href="mailto:info@saturdaymp.com" class="link-light">info@saturdaymp.com</a>
-                    <h5 class="contact-email-box-header">Software Consulting</h5>
+                    <h5 class="contact-email-box-header">Customer Support</h5>
                     <a href="mailto:support@saturdaymp.com" class="link-light">support@saturdaymp.com</a>
+                    <h5 class="contact-email-box-header">Phone</h5>
+                    <a href="tel:+1-780-886-3406" class="link-light">1-780-886-3406</a>
                 </div>
             </div>
         </div>
