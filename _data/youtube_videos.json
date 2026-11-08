@@ -1,12 +1,39 @@
 [
   {
+    "id": "buExHCpWui0",
+    "title": "Solving Seek and Destroy 1 in 7 Billion Humans (Quick Clip)",
+    "description": "I solve Seek and Destroy, including the speed and size challenges.  Clip from: https://youtube.com/live/VkX6Iu3-dU4",
+    "publishedAt": "2026-11-04T14:33:38Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/buExHCpWui0.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/buExHCpWui0/mqdefault.jpg",
+    "viewCount": 17
+  },
+  {
+    "id": "OqCkPi_CrH0",
+    "title": "Nearest command is faster than set command",
+    "description": "I test the nearest command is faster set command in 7 Billion Humans.",
+    "publishedAt": "2026-11-03T17:40:28Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/OqCkPi_CrH0.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/OqCkPi_CrH0/mqdefault.jpg",
+    "viewCount": 38
+  },
+  {
+    "id": "VkX6Iu3-dU4",
+    "title": "7 Billion Humans - Part 10 (SaturdayMP Show 122)",
+    "description": "In this episode I solve the following:\n\n03:15 – Seek and Destroy 1\n16:18 – Intro to Calc for Art Majors\n18:30 – Seek and Destroy 2\n44:18 – Dangerous Spreadsheeting\n\nI solve the basic Dangerous Spreadsheeting but fail to solve the size or speed challenges for it.  If you have any suggestions, without giving away the answer, please let me know.\n\nP.S. - I choose this YouTube AI-generated thumbnail because it gave me an eyebrow.\n\nPart 9:\nhttps://youtube.com/live/cpykvaeD7Kg\n\n7 Billion Humans:\nhttps://tomorrowcorporation.com/7billionhumans\n\n7 Billion Humans Playlist:\nhttps://www.youtube.com/playlist?list=PLI0ut1WsT25E\n\nPart 7:\nhttps://youtube.com/live/OKN4fAAUWrY\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or\ninteresting problem you want to see solved? Constructive feedback? Then\ncomment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-11-02",
+    "publishedAt": "2026-11-03T07:42:41Z",
+    "thumbnail": "/assets/images/youtube-thumbnails/VkX6Iu3-dU4.jpg",
+    "thumbnailMedium": "https://i.ytimg.com/vi/VkX6Iu3-dU4/mqdefault.jpg",
+    "viewCount": 17
+  },
+  {
     "id": "cpykvaeD7Kg",
-    "title": "7 Billion Humans - Part 9 (SaturdayMP Show 120)",
-    "description": "In this episode I solve the following:\n\n01:36 - Checkerboard Organization\n18:02 - Creative Writing\n35:29 - Data Backup Day\n1:17:15 - Data Backup Day solution\n1:20:14 - Seek and Destroy 1 (Didn't solve, just looked at it)\n\nSorry, no Omar today.  Just me.  I did figure out that you can use the Set command to move to a specific data block.\n\nI asked YouTube AI to create a thumbnail, and it created a lackluster one.  I asked YouTube AI to spice it up, and it came up with the one you see.  It made me laugh, so I kept it even though I'm not a big fan of it.\n\n7 Billion Humans:\nhttps://tomorrowcorporation.com/7billionhumans\n\n7 Billion Humans Playlist:\nhttps://www.youtube.com/playlist?list=PLI0ut1WsT25E\n\nPart 7:\nhttps://youtube.com/live/OKN4fAAUWrY\n\nOmar:\nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or\ninteresting problem you want to see solved? Constructive feedback? Then\ncomment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-10-26",
+    "title": "7 Billion Humans - Part 9 (SaturdayMP Show 121)",
+    "description": "In this episode I solve the following:\n\n01:36 - Checkerboard Organization\n18:02 - Creative Writing\n35:29 - Data Backup Day\n1:17:15 - Data Backup Day solution\n1:20:14 - Seek and Destroy 1 (Didn't solve, just looked at it)\n\nSorry, no Omar today.  Just me.  I did figure out that you can use the Set command to move to a specific data block.\n\nI asked YouTube AI to create a thumbnail, and it created a lackluster one.  I asked YouTube AI to spice it up, and it came up with the one you see.  It made me laugh, so I kept it even though I'm not a big fan of it.\n\n7 Billion Humans:\nhttps://tomorrowcorporation.com/7billionhumans\n\n7 Billion Humans Playlist:\nhttps://www.youtube.com/playlist?list=PLI0ut1WsT25E\n\nPart 8:\nhttps://youtu.be/xcT5XCv1lHg\n\nPart 9:\nhttps://youtube.com/live/VkX6Iu3-dU4\n\nOmar:\nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or\ninteresting problem you want to see solved? Constructive feedback? Then\ncomment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-10-26",
     "publishedAt": "2026-10-27T05:29:53Z",
     "thumbnail": "/assets/images/youtube-thumbnails/cpykvaeD7Kg.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/cpykvaeD7Kg/mqdefault.jpg",
-    "viewCount": 8
+    "viewCount": 11
   },
   {
     "id": "xGXalNYKN5I",
@@ -15,7 +42,7 @@
     "publishedAt": "2026-10-22T16:21:18Z",
     "thumbnail": "/assets/images/youtube-thumbnails/xGXalNYKN5I.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/xGXalNYKN5I/mqdefault.jpg",
-    "viewCount": 3
+    "viewCount": 5
   },
   {
     "id": "94TWzqSPhAQ",
@@ -33,7 +60,7 @@
     "publishedAt": "2026-10-18T13:14:50Z",
     "thumbnail": "/assets/images/youtube-thumbnails/5I4wwwEKBGI.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/5I4wwwEKBGI/mqdefault.jpg",
-    "viewCount": 1
+    "viewCount": 12
   },
   {
     "id": "Rd_yUK-cNbA",
@@ -42,12 +69,12 @@
     "publishedAt": "2026-10-16T15:05:25Z",
     "thumbnail": "/assets/images/youtube-thumbnails/Rd_yUK-cNbA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/Rd_yUK-cNbA/mqdefault.jpg",
-    "viewCount": 2
+    "viewCount": 20
   },
   {
     "id": "xcT5XCv1lHg",
     "title": "7 Billion Humans - Part 8 (SaturdayMP Show 119)",
-    "description": "In this episode Omar and I solve the following:\n\n02:29 - My First Shredding Memory\n28:55 - Fitness Program\n31:39 - Neural Pathways\n36:21 - Biometric Access\n42:57 - Fill the Floor\n02:41:32 - Fill the Floor Speed Challenge solution.\n\nYes, we spend almost 2 hours trying to solve the Fill the Floor speed challenge.  We finally solve the challenge through determination.  Or was it stubbornness?  It is hard to tell the difference between the two.\n\n7 Billion Humans:\nhttps://tomorrowcorporation.com/7billionhumans\n\n7 Billion Humans Playlist:\nhttps://www.youtube.com/playlist?list=PLI0ut1WsT25E\n\nPart 7:\nhttps://youtube.com/live/OKN4fAAUWrY\n\nOmar:\nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or\ninteresting problem you want to see solved? Constructive feedback? Then\ncomment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-10-14",
+    "description": "In this episode Omar and I solve the following:\n\n02:29 - My First Shredding Memory\n28:55 - Fitness Program\n31:39 - Neural Pathways\n36:21 - Biometric Access\n42:57 - Fill the Floor\n02:41:32 - Fill the Floor Speed Challenge solution.\n\nYes, we spend almost 2 hours trying to solve the Fill the Floor speed challenge.  We finally solve the challenge through determination.  Or was it stubbornness?  It is hard to tell the difference between the two.\n\n7 Billion Humans:\nhttps://tomorrowcorporation.com/7billionhumans\n\n7 Billion Humans Playlist:\nhttps://www.youtube.com/playlist?list=PLI0ut1WsT25E\n\nPart 7:\nhttps://youtube.com/live/OKN4fAAUWrY\n\nPart 9:\nhttps://youtube.com/live/cpykvaeD7Kg\n\nOmar:\nhttps://www.ashour.ca/\n\nSaturdayMP:\nhttps://saturdaymp.com/\n\nHave a question you want answered in a future video? A challenging or\ninteresting problem you want to see solved? Constructive feedback? Then\ncomment, DM, or send an email to ask@saturdaymp.com.\n\nFound this video useful? Then help others find it by liking, subscribing, sharing, and/or sponsoring:\n\nhttps://github.com/sponsors/saturdaymp\n\nThanks for watching!\n\nRecorded: 2026-10-14",
     "publishedAt": "2026-10-15T22:43:23Z",
     "thumbnail": "/assets/images/youtube-thumbnails/xcT5XCv1lHg.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/xcT5XCv1lHg/mqdefault.jpg",
@@ -69,7 +96,7 @@
     "publishedAt": "2026-10-06T05:58:42Z",
     "thumbnail": "/assets/images/youtube-thumbnails/OKN4fAAUWrY.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/OKN4fAAUWrY/mqdefault.jpg",
-    "viewCount": 15
+    "viewCount": 16
   },
   {
     "id": "ii00LjqexIo",
@@ -78,7 +105,7 @@
     "publishedAt": "2026-09-29T17:00:37Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ii00LjqexIo.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ii00LjqexIo/mqdefault.jpg",
-    "viewCount": 228
+    "viewCount": 229
   },
   {
     "id": "P29ZSjH0oYY",
@@ -96,7 +123,7 @@
     "publishedAt": "2026-09-22T19:49:39Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ugZZdu_c-xA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ugZZdu_c-xA/mqdefault.jpg",
-    "viewCount": 82
+    "viewCount": 86
   },
   {
     "id": "XbvTdbkuLO0",
@@ -123,7 +150,7 @@
     "publishedAt": "2026-09-15T05:15:05Z",
     "thumbnail": "/assets/images/youtube-thumbnails/wD96lbejqus.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/wD96lbejqus/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 10
   },
   {
     "id": "RQLfMtH_oFw",
@@ -132,7 +159,7 @@
     "publishedAt": "2026-09-09T14:45:19Z",
     "thumbnail": "/assets/images/youtube-thumbnails/RQLfMtH_oFw.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/RQLfMtH_oFw/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 8
   },
   {
     "id": "Vv3qc2RYmcM",
@@ -150,7 +177,7 @@
     "publishedAt": "2026-08-26T15:38:37Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ryKok4iuH4o.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ryKok4iuH4o/mqdefault.jpg",
-    "viewCount": 17
+    "viewCount": 19
   },
   {
     "id": "LHdpVj29z6w",
@@ -573,7 +600,7 @@
     "publishedAt": "2025-02-05T07:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/CzHv3uY2KiU.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/CzHv3uY2KiU/mqdefault.jpg",
-    "viewCount": 119
+    "viewCount": 121
   },
   {
     "id": "AT8w2fsgzsA",
@@ -636,7 +663,7 @@
     "publishedAt": "2024-11-27T07:00:21Z",
     "thumbnail": "/assets/images/youtube-thumbnails/ga99fYkwVJA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/ga99fYkwVJA/mqdefault.jpg",
-    "viewCount": 6
+    "viewCount": 7
   },
   {
     "id": "0bTbXpXUhmk",
@@ -708,7 +735,7 @@
     "publishedAt": "2024-09-25T06:00:11Z",
     "thumbnail": "/assets/images/youtube-thumbnails/K78TJuSNm4Y.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/K78TJuSNm4Y/mqdefault.jpg",
-    "viewCount": 309
+    "viewCount": 311
   },
   {
     "id": "q_M-Gkcw9e0",
@@ -924,7 +951,7 @@
     "publishedAt": "2024-01-03T16:24:23Z",
     "thumbnail": "/assets/images/youtube-thumbnails/xQXHTrzqPwI.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/xQXHTrzqPwI/mqdefault.jpg",
-    "viewCount": 138
+    "viewCount": 139
   },
   {
     "id": "uBnua-JZrec",
@@ -933,7 +960,7 @@
     "publishedAt": "2023-12-26T17:51:34Z",
     "thumbnail": "/assets/images/youtube-thumbnails/uBnua-JZrec.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/uBnua-JZrec/mqdefault.jpg",
-    "viewCount": 319
+    "viewCount": 321
   },
   {
     "id": "05KtqwobX5Y",
@@ -1005,7 +1032,7 @@
     "publishedAt": "2023-11-01T21:27:23Z",
     "thumbnail": "/assets/images/youtube-thumbnails/mSG0Fj-qwyY.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/mSG0Fj-qwyY/mqdefault.jpg",
-    "viewCount": 214
+    "viewCount": 216
   },
   {
     "id": "U8YmtsiNjyA",
@@ -1032,7 +1059,7 @@
     "publishedAt": "2023-10-11T02:09:30Z",
     "thumbnail": "/assets/images/youtube-thumbnails/gR4w9trH9pA.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/gR4w9trH9pA/mqdefault.jpg",
-    "viewCount": 387
+    "viewCount": 389
   },
   {
     "id": "3EPNI5ge90g",
@@ -1041,7 +1068,7 @@
     "publishedAt": "2023-09-20T15:54:27Z",
     "thumbnail": "/assets/images/youtube-thumbnails/3EPNI5ge90g.jpg",
     "thumbnailMedium": "https://i.ytimg.com/vi/3EPNI5ge90g/mqdefault.jpg",
-    "viewCount": 12
+    "viewCount": 13
   },
   {
     "id": "m-twGm7KMbI",
